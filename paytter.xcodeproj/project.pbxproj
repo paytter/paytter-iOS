@@ -27,6 +27,7 @@
 		BE293E3E1C93DD3A00549261 /* UIColor+AppDefinedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */; };
 		BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E401C93E35B00549261 /* ScanNavigationController.swift */; };
 		BE293E431C93E9D500549261 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E421C93E9D500549261 /* Shopping.swift */; };
+		BE293E451C93ED0600549261 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E441C93ED0600549261 /* Product.swift */; };
 		BE293E471C93EFEE00549261 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E461C93EFEE00549261 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppDefinedColor.swift"; sourceTree = "<group>"; };
 		BE293E401C93E35B00549261 /* ScanNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNavigationController.swift; sourceTree = "<group>"; };
 		BE293E421C93E9D500549261 /* Shopping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		BE293E441C93ED0600549261 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BE293E461C93EFEE00549261 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 				BE293E111C93CED000549261 /* AppDelegate.swift */,
 				BE293E131C93CED000549261 /* ViewController.swift */,
 				BE293E421C93E9D500549261 /* Shopping.swift */,
+				BE293E441C93ED0600549261 /* Product.swift */,
 				BE293E371C93D5B200549261 /* Scan */,
 				BE293E351C93D59E00549261 /* Cart */,
 				BE293E361C93D5A500549261 /* MyPage */,
@@ -312,6 +315,7 @@
 				BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */,
 				BE293E471C93EFEE00549261 /* APIManager.swift in Sources */,
 				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
+				BE293E451C93ED0600549261 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
