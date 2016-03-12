@@ -26,4 +26,18 @@ class CartItemDetailViewController: UIViewController {
     @IBAction private func didTouchStepper(sender: UIStepper) {
         print("didTouchStepper")
     }
+    
+    @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension CartItemDetailViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if gestureRecognizer.view != touch.view {
+            return false
+        }
+        
+        return true
+    }
 }

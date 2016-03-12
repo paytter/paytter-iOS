@@ -204,12 +204,16 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mE7-X2-u6C" firstAttribute="centerY" secondItem="xOo-7p-3YE" secondAttribute="centerY" id="KHM-cF-xkX"/>
                             <constraint firstItem="mE7-X2-u6C" firstAttribute="leading" secondItem="xOo-7p-3YE" secondAttribute="leadingMargin" constant="47" id="UR1-Ej-YKK"/>
                             <constraint firstItem="mE7-X2-u6C" firstAttribute="top" secondItem="ncU-T5-9GD" secondAttribute="bottom" constant="97" id="gP8-6f-6lG"/>
                             <constraint firstItem="mE7-X2-u6C" firstAttribute="centerX" secondItem="xOo-7p-3YE" secondAttribute="centerX" id="sgy-ao-Dxf"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Y2j-7E-9zO" appends="YES" id="MeK-aC-hpA"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="wgp-ic-yJQ" id="Ooy-id-q6W"/>
@@ -219,6 +223,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZQ-XB-88p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Y2j-7E-9zO">
+                    <connections>
+                        <action selector="didTouchOutView:" destination="ar9-hC-xNi" id="OSP-vx-9Nu"/>
+                        <outlet property="delegate" destination="ar9-hC-xNi" id="cXN-63-zcn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1983" y="-31"/>
         </scene>
