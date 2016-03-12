@@ -46,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        APIManager.sharedManager.processOAuthResponse(url)
+        return true
+    }
+
     private func configureNavigationBar() {
         UIApplication.sharedApplication().statusBarHidden = false
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
