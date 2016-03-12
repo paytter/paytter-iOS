@@ -29,6 +29,7 @@
 		BE293E431C93E9D500549261 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E421C93E9D500549261 /* Shopping.swift */; };
 		BE293E451C93ED0600549261 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E441C93ED0600549261 /* Product.swift */; };
 		BE293E471C93EFEE00549261 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E461C93EFEE00549261 /* APIManager.swift */; };
+		BE293E491C93FEB600549261 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E481C93FEB600549261 /* Icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		BE293E421C93E9D500549261 /* Shopping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		BE293E441C93ED0600549261 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BE293E461C93EFEE00549261 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BE293E481C93FEB600549261 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 			children = (
 				BE293E381C93D63900549261 /* ViewControllerFactory.swift */,
 				BE293E461C93EFEE00549261 /* APIManager.swift */,
+				BE293E481C93FEB600549261 /* Icon.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */,
 				BE293E471C93EFEE00549261 /* APIManager.swift in Sources */,
 				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
+				BE293E491C93FEB600549261 /* Icon.swift in Sources */,
 				BE293E451C93ED0600549261 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
