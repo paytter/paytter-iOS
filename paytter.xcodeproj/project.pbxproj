@@ -13,6 +13,8 @@
 		BE293E171C93CED000549261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E151C93CED000549261 /* Main.storyboard */; };
 		BE293E191C93CED000549261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE293E181C93CED000549261 /* Assets.xcassets */; };
 		BE293E1C1C93CED000549261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E1A1C93CED000549261 /* LaunchScreen.storyboard */; };
+		BE293E241C93D2B200549261 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E231C93D2B200549261 /* Cart.storyboard */; };
+		BE293E261C93D2B900549261 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E251C93D2B900549261 /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		BE293E181C93CED000549261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE293E1B1C93CED000549261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE293E1D1C93CED000549261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE293E231C93D2B200549261 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		BE293E251C93D2B900549261 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 				BE293E111C93CED000549261 /* AppDelegate.swift */,
 				BE293E131C93CED000549261 /* ViewController.swift */,
 				BE293E151C93CED000549261 /* Main.storyboard */,
+				BE293E231C93D2B200549261 /* Cart.storyboard */,
+				BE293E251C93D2B900549261 /* MyPage.storyboard */,
 				BE293E181C93CED000549261 /* Assets.xcassets */,
 				BE293E1A1C93CED000549261 /* LaunchScreen.storyboard */,
 				BE293E1D1C93CED000549261 /* Info.plist */,
@@ -149,6 +155,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE293E241C93D2B200549261 /* Cart.storyboard in Resources */,
+				BE293E261C93D2B900549261 /* MyPage.storyboard in Resources */,
 				BE293E1C1C93CED000549261 /* LaunchScreen.storyboard in Resources */,
 				BE293E191C93CED000549261 /* Assets.xcassets in Resources */,
 				BE293E171C93CED000549261 /* Main.storyboard in Resources */,
