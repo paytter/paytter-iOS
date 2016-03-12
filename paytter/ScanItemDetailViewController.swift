@@ -19,6 +19,16 @@ class ScanItemDetailViewController: UIViewController {
             closeButton.setTitle(Icon.kClose, forState: .Normal)
         }
     }
+    @IBOutlet private weak var cancelButton: UIButton! {
+        didSet {
+            cancelButton.setTitle(Icon.kClose, forState: .Normal)
+        }
+    }
+    @IBOutlet private weak var addButton: UIButton! {
+        didSet {
+            addButton.setTitle(Icon.kAddCart, forState: .Normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

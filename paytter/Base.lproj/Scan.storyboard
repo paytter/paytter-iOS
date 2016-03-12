@@ -236,6 +236,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="YVz-2K-eP5" id="F6b-Th-41S"/>
+                        <outlet property="cancelButton" destination="QVN-45-x53" id="ySn-f9-L97"/>
                         <outlet property="closeButton" destination="fPd-Oa-uOv" id="42B-tf-Xm2"/>
                         <outlet property="nameLabel" destination="cPQ-W6-6a0" id="xiH-OY-ZyL"/>
                         <outlet property="priceLabel" destination="2gd-Rm-v98" id="2ch-lG-zij"/>

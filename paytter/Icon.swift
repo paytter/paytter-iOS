@@ -10,4 +10,5 @@ import UIKit
 
 class Icon: NSObject {
     static let kClose = "\u{f00d}"
+    static let kAddCart = "\u{f218}"
 }
