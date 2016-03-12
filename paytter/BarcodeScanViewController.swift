@@ -19,15 +19,15 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        prepareScan()
+        captureSession.startRunning();
+
         APIManager.sharedManager.getProduct {
             (product: Product) -> Void in
             let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
             scanItemDetailViewController.product = product
             self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
         }
-
-        prepareScan()
-        captureSession.startRunning();
     }
 
     func failed() {
