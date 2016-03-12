@@ -22,6 +22,7 @@
 		BE293E301C93D50700549261 /* ScanItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */; };
 		BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E311C93D53E00549261 /* CartItemCell.swift */; };
 		BE293E341C93D58A00549261 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E331C93D58A00549261 /* MyPageViewController.swift */; };
+		BE293E391C93D63900549261 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E381C93D63900549261 /* ViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanItemDetailViewController.swift; sourceTree = "<group>"; };
 		BE293E311C93D53E00549261 /* CartItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		BE293E331C93D58A00549261 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BE293E381C93D63900549261 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				BE293E371C93D5B200549261 /* Scan */,
 				BE293E351C93D59E00549261 /* Cart */,
 				BE293E361C93D5A500549261 /* MyPage */,
+				BE293E3A1C93D8F000549261 /* Utility */,
 				BE293E151C93CED000549261 /* Scan.storyboard */,
 				BE293E231C93D2B200549261 /* Cart.storyboard */,
 				BE293E251C93D2B900549261 /* MyPage.storyboard */,
@@ -129,6 +132,14 @@
 				BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */,
 			);
 			name = Scan;
+			sourceTree = "<group>";
+		};
+		BE293E3A1C93D8F000549261 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BE293E381C93D63900549261 /* ViewControllerFactory.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		D8F0EE9AF672C038DD2C563D /* Frameworks */ = {
@@ -264,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE293E2E1C93D4FD00549261 /* CartItemDetailViewController.swift in Sources */,
+				BE293E391C93D63900549261 /* ViewControllerFactory.swift in Sources */,
 				BE293E341C93D58A00549261 /* MyPageViewController.swift in Sources */,
 				BE293E141C93CED000549261 /* ViewController.swift in Sources */,
 				BE293E121C93CED000549261 /* AppDelegate.swift in Sources */,
