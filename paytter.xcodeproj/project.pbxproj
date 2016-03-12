@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80A4E7772B1148862095A286 /* Pods_paytter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D3417BE87B3962AF4B42DD /* Pods_paytter.framework */; };
 		BE293E121C93CED000549261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E111C93CED000549261 /* AppDelegate.swift */; };
 		BE293E141C93CED000549261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E131C93CED000549261 /* ViewController.swift */; };
 		BE293E171C93CED000549261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E151C93CED000549261 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05D3417BE87B3962AF4B42DD /* Pods_paytter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_paytter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DF8D9BFA5FCAEAC903310AC /* Pods-paytter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.release.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.release.xcconfig"; sourceTree = "<group>"; };
 		BE293E0E1C93CECF00549261 /* paytter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paytter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE293E111C93CED000549261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE293E131C93CED000549261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		BE293E181C93CED000549261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE293E1B1C93CED000549261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE293E1D1C93CED000549261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A4E7772B1148862095A286 /* Pods_paytter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65184CD9471DA8F5689054D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */,
+				2DF8D9BFA5FCAEAC903310AC /* Pods-paytter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE293E051C93CECF00549261 = {
 			isa = PBXGroup;
 			children = (
 				BE293E101C93CED000549261 /* paytter */,
 				BE293E0F1C93CECF00549261 /* Products */,
+				65184CD9471DA8F5689054D6 /* Pods */,
+				D8F0EE9AF672C038DD2C563D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = paytter;
 			sourceTree = "<group>";
 		};
+		D8F0EE9AF672C038DD2C563D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05D3417BE87B3962AF4B42DD /* Pods_paytter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE293E201C93CED000549261 /* Build configuration list for PBXNativeTarget "paytter" */;
 			buildPhases = (
+				F61C51D99475541DB4FFCE78 /* Check Pods Manifest.lock */,
 				BE293E0A1C93CECF00549261 /* Sources */,
 				BE293E0B1C93CECF00549261 /* Frameworks */,
 				BE293E0C1C93CECF00549261 /* Resources */,
+				C6F76D0E45BC54F16BAF0ADE /* Embed Pods Frameworks */,
+				DE7A2E3266E3E5BB2977671F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6F76D0E45BC54F16BAF0ADE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paytter/Pods-paytter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE7A2E3266E3E5BB2977671F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paytter/Pods-paytter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F61C51D99475541DB4FFCE78 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE293E0A1C93CECF00549261 /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		BE293E211C93CED000549261 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = paytter/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		BE293E221C93CED000549261 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF8D9BFA5FCAEAC903310AC /* Pods-paytter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = paytter/Info.plist;
@@ -286,6 +363,7 @@
 				BE293E221C93CED000549261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
