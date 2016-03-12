@@ -42,7 +42,19 @@
                     <view key="view" contentMode="scaleToFill" id="dTR-2f-y26">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52K-AN-nXw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GHz-5i-Iqw" firstAttribute="top" secondItem="52K-AN-nXw" secondAttribute="bottom" id="DHx-mm-rac"/>
+                            <constraint firstItem="52K-AN-nXw" firstAttribute="leading" secondItem="dTR-2f-y26" secondAttribute="leadingMargin" constant="-20" id="PGQ-38-2VY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="52K-AN-nXw" secondAttribute="trailing" constant="-20" id="dxP-64-hcK"/>
+                            <constraint firstItem="52K-AN-nXw" firstAttribute="top" secondItem="bL0-ub-1Lg" secondAttribute="bottom" id="mBz-oT-Ef1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jWB-iP-AqP">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Joz-Eu-w4h">
@@ -54,6 +66,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scanView" destination="52K-AN-nXw" id="lML-BF-4ia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npn-hH-Tcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
