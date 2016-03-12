@@ -106,11 +106,10 @@
 			children = (
 				BE293E111C93CED000549261 /* AppDelegate.swift */,
 				BE293E131C93CED000549261 /* ViewController.swift */,
-				BE293E421C93E9D500549261 /* Shopping.swift */,
-				BE293E441C93ED0600549261 /* Product.swift */,
 				BE293E371C93D5B200549261 /* Scan */,
 				BE293E351C93D59E00549261 /* Cart */,
 				BE293E361C93D5A500549261 /* MyPage */,
+				BE293E4A1C94387F00549261 /* Model */,
 				BE293E3F1C93DD5400549261 /* Category */,
 				BE293E3A1C93D8F000549261 /* Utility */,
 				BE293E3B1C93D9C700549261 /* Main.storyboard */,
@@ -169,6 +168,15 @@
 				BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		BE293E4A1C94387F00549261 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE293E421C93E9D500549261 /* Shopping.swift */,
+				BE293E441C93ED0600549261 /* Product.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D8F0EE9AF672C038DD2C563D /* Frameworks */ = {
