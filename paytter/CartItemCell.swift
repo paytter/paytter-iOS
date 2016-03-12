@@ -20,8 +20,8 @@ class CartItemCell: UITableViewCell {
     
     func configure(product product: Product) {
         nameLabel.text = product.detail?.itemName
-        quantityLabel.text = product.detail?.quantity?.description
-        priceLabel.text = product.price?.description
+        quantityLabel.text = "\(product.detail?.quantity?.description ?? "")個"
+        priceLabel.text = "\(product.price?.description ?? "")円"
         productImageView.af_setImageWithURL(NSURL(string: product.imageUrl ?? "")!)
     }
 }
