@@ -10,26 +10,39 @@ import UIKit
 
 class ScanItemDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var quantityLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var productImageView: UIImageView!
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+            closeButton.setTitle(Icon.kClose, forState: .Normal)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
+    
+    @IBAction private func didTouchStepper(sender: UIStepper) {
+        print("didTouchStepper")
+    }
+    
+    @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction private func didTouchCloseButton(sender: UITapGestureRecognizer!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
 
+extension ScanItemDetailViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if gestureRecognizer.view != touch.view {
+            return false
+        }
+        
+        return true
+    }
 }

@@ -73,7 +73,10 @@ final class ViewControllerFactory: NSObject {
     
     class func scanItemDetailViewController() -> ScanItemDetailViewController {
         let storyboard = UIStoryboard(name: StoryboardName.Scan.rawValue, bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier(ScanClassName.ScanItemDetailViewController.rawValue) as! ScanItemDetailViewController
+        let scanItemDetailViewController = storyboard.instantiateViewControllerWithIdentifier(ScanClassName.ScanItemDetailViewController.rawValue) as! ScanItemDetailViewController
+        scanItemDetailViewController.modalPresentationStyle = .OverCurrentContext
+        scanItemDetailViewController.modalTransitionStyle = .CoverVertical
+        return scanItemDetailViewController
     }
     
     
