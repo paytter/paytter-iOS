@@ -19,10 +19,19 @@ class APIManager: NSObject {
     // MARK: GET Methods
 
     
-    func getProduct(completion: (product: Product) -> Void) {
+    func getProduct(storeId storeId: Int, eanId: Int?, isbnId: Int?, itemIds: String, completion: (product: Product) -> Void) {
         let url = kHostURL + "products/search"
         
-        Alamofire.request(.GET, url, parameters: nil)
+        var params: [String : AnyObject] = ["store_id" : storeId]
+        params["item_ids"] = itemIds
+        if let eanId = eanId {
+            params["ean_id"] = eanId
+        }
+        if let isbnId = isbnId {
+            params["isbn_id"] = isbnId
+        }
+        
+        Alamofire.request(.GET, url, parameters: params)
             .responseJSON { response in
                 if response.result.isSuccess {
                     if let json = response.result.value {

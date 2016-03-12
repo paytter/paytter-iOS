@@ -22,12 +22,12 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
         prepareScan()
         captureSession.startRunning();
 
-        APIManager.sharedManager.getProduct {
+        APIManager.sharedManager.getProduct(storeId: 1, eanId: nil, isbnId: nil, itemIds: "food_0000121261", completion: {
             (product: Product) -> Void in
             let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
             scanItemDetailViewController.product = product
             self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
-        }
+        })
     }
 
     func failed() {
