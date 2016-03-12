@@ -11,6 +11,7 @@ import UIKit
 class CartItemDetailViewController: UIViewController {
 
     var product: Product?
+    var delegate: CartItemDetailViewControllerDelegate?
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
@@ -51,10 +52,12 @@ class CartItemDetailViewController: UIViewController {
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {
+        delegate?.dismissViewController()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction private func didTouchCloseButton(sender: UITapGestureRecognizer!) {
+        delegate?.dismissViewController()
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
@@ -67,4 +70,8 @@ extension CartItemDetailViewController: UIGestureRecognizerDelegate {
         
         return true
     }
+}
+
+protocol CartItemDetailViewControllerDelegate {
+    func dismissViewController()
 }

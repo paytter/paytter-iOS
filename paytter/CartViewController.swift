@@ -69,7 +69,14 @@ extension CartViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cartItemDetailViewController = ViewControllerFactory.cartItemDetailViewController()
+        cartItemDetailViewController.delegate = self
         cartItemDetailViewController.product = products[indexPath.row]
         presentViewController(cartItemDetailViewController, animated: true, completion: nil)
+    }
+}
+
+extension CartViewController: CartItemDetailViewControllerDelegate {
+    func dismissViewController() {
+        tableView.reloadData()
     }
 }
