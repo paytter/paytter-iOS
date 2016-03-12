@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        configureNavigationBar()
         configureTabbarController()
         
         return true
@@ -45,6 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func configureNavigationBar() {
+        UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UINavigationBar.appearance().barTintColor = UIColor.navigationBarColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backIndicatorImage = UIImage.fontAwesomeIconWithName(.ArrowLeft, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(6, 6, 6, 6))
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage.fontAwesomeIconWithName(.ArrowLeft, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal).imageWithAlignmentRectInsets(UIEdgeInsetsMake(6, 6, 6, 6))
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -64), forBarMetrics: UIBarMetrics.Default)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.navigationBarColor()], forState: .Selected)
+    }
+    
     private func configureTabbarController() {
         let rankingNavigationController = ViewControllerFactory.barcodeScanNavigationController()
         rankingNavigationController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Barcode, textColor: UIColor.grayColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
