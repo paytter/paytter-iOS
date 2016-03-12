@@ -31,14 +31,14 @@ class Product: NSObject {
         var brand: String?
         var itemName: String?
         var maker: String?
-        var quantity: String?
+        var quantity: Int?
         var releaseDate: String?
         
         init (json: JSON) {
             brand = json["brand"].string
             itemName = json["itemName"].string
             maker = json["maker"].string
-            quantity = json["quantity"].string
+            quantity = Int(json["quantity"].string!)
             releaseDate = json["releaseDate"].string
         }
         
@@ -65,5 +65,13 @@ class Product: NSObject {
             
             return site
         }
+    }
+    
+    func addItem() {
+        detail?.quantity? += 1
+    }
+    
+    func removeItem() {
+        detail?.quantity? -= 1
     }
 }

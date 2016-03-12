@@ -11,27 +11,15 @@ import UIKit
 class ScanItemDetailViewController: UIViewController {
 
     var product: Product?
-    private var price = 0 {
-        didSet {
-            priceLabel.text = "\(price)円"
-            product?.price = price
-        }
-    }
-    private var quantity = 0 {
-        didSet {
-            quantityLabel.text = "\(quantity)個"
-            product?.detail?.quantity = quantity.description
-            price = (product?.price ?? 0) * quantity
-        }
-    }
+    private var quantity = 0
     
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var quantityLabel: UILabel!
-    @IBOutlet private weak var priceLabel: UILabel! {
+    @IBOutlet private weak var nameLabel: UILabel! {
         didSet {
-            priceLabel.text = "\(price)円"
+            nameLabel.text = product?.detail?.itemName
         }
     }
+    @IBOutlet private weak var quantityLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var productImageView: UIImageView!
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
@@ -48,13 +36,42 @@ class ScanItemDetailViewController: UIViewController {
             addButton.setTitle(Icon.kAddCart, forState: .Normal)
         }
     }
+    @IBOutlet private weak var stepper: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        quantity = product?.detail?.quantity ?? 0
+        
+        priceLabel.text = "\((product?.price ?? 0) * quantity)円"
+        quantityLabel.text = "\(product?.detail?.quantity ?? 0)個"
+        
+        stepper.value = Double(quantity)
+        
+        if let url = NSURL(string: product?.imageUrl ?? "") {
+            productImageView.af_setImageWithURL(url)
+        }
     }
     
     @IBAction private func didTouchStepper(sender: UIStepper) {
-        quantity = Int(sender.value)
+        if quantity < Int(sender.value) {
+            product?.addItem()
+            addItem()
+        } else if quantity > Int(sender.value) {
+            product?.removeItem()
+            removeItem()
+        }
+
+        priceLabel.text = "\((product?.price ?? 0) * quantity)円"
+        quantityLabel.text = "\(product?.detail?.quantity ?? 0)個"
+    }
+    
+    private func addItem() {
+        quantity += 1
+    }
+
+    private func removeItem() {
+        quantity -= 1
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {

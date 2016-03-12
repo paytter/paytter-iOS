@@ -20,7 +20,7 @@ class CartItemCell: UITableViewCell {
     
     func configure(product product: Product) {
         nameLabel.text = product.detail?.itemName
-        quantityLabel.text = product.detail?.quantity
+        quantityLabel.text = product.detail?.quantity?.description
         priceLabel.text = product.price?.description
         productImageView.af_setImageWithURL(NSURL(string: product.imageUrl ?? "")!)
     }
