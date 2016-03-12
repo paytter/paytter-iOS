@@ -26,6 +26,7 @@
 		BE293E3C1C93D9C700549261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E3B1C93D9C700549261 /* Main.storyboard */; };
 		BE293E3E1C93DD3A00549261 /* UIColor+AppDefinedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */; };
 		BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E401C93E35B00549261 /* ScanNavigationController.swift */; };
+		BE293E431C93E9D500549261 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E421C93E9D500549261 /* Shopping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		BE293E3B1C93D9C700549261 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppDefinedColor.swift"; sourceTree = "<group>"; };
 		BE293E401C93E35B00549261 /* ScanNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNavigationController.swift; sourceTree = "<group>"; };
+		BE293E421C93E9D500549261 /* Shopping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			children = (
 				BE293E111C93CED000549261 /* AppDelegate.swift */,
 				BE293E131C93CED000549261 /* ViewController.swift */,
+				BE293E421C93E9D500549261 /* Shopping.swift */,
 				BE293E371C93D5B200549261 /* Scan */,
 				BE293E351C93D59E00549261 /* Cart */,
 				BE293E361C93D5A500549261 /* MyPage */,
@@ -299,6 +302,7 @@
 				BE293E141C93CED000549261 /* ViewController.swift in Sources */,
 				BE293E121C93CED000549261 /* AppDelegate.swift in Sources */,
 				BE293E301C93D50700549261 /* ScanItemDetailViewController.swift in Sources */,
+				BE293E431C93E9D500549261 /* Shopping.swift in Sources */,
 				BE293E2C1C93D4C700549261 /* CartViewController.swift in Sources */,
 				BE293E281C93D48F00549261 /* BarcodeScanViewController.swift in Sources */,
 				BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */,
