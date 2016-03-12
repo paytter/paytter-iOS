@@ -91,7 +91,10 @@ final class ViewControllerFactory: NSObject {
     
     class func cartItemDetailViewController() -> CartItemDetailViewController {
         let storyboard = UIStoryboard(name: StoryboardName.Cart.rawValue, bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier(CartClassName.CartItemDetailViewController.rawValue) as! CartItemDetailViewController
+        let cartItemDetailViewController = storyboard.instantiateViewControllerWithIdentifier(CartClassName.CartItemDetailViewController.rawValue) as! CartItemDetailViewController
+        cartItemDetailViewController.modalPresentationStyle = .OverCurrentContext
+        cartItemDetailViewController.modalTransitionStyle = .CoverVertical
+        return cartItemDetailViewController
     }
 
     

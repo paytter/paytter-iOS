@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWj-zo-b4X" id="Swc-qE-gee">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シーチキンマヨネーズ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-fc-6Xb">
@@ -122,6 +122,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJK-ix-V0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1288" y="-31"/>
+        </scene>
+        <!--Cart Item Detail View Controller-->
+        <scene sceneID="DJt-UA-j4X">
+            <objects>
+                <viewController storyboardIdentifier="CartItemDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ar9-hC-xNi" customClass="CartItemDetailViewController" customModule="paytter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ncU-T5-9GD"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJU-YX-e7J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xOo-7p-3YE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE7-X2-u6C">
+                                <rect key="frame" x="67" y="117" width="466" height="365"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mE7-X2-u6C" firstAttribute="centerY" secondItem="xOo-7p-3YE" secondAttribute="centerY" id="KHM-cF-xkX"/>
+                            <constraint firstItem="mE7-X2-u6C" firstAttribute="leading" secondItem="xOo-7p-3YE" secondAttribute="leadingMargin" constant="47" id="UR1-Ej-YKK"/>
+                            <constraint firstItem="mE7-X2-u6C" firstAttribute="top" secondItem="ncU-T5-9GD" secondAttribute="bottom" constant="97" id="gP8-6f-6lG"/>
+                            <constraint firstItem="mE7-X2-u6C" firstAttribute="centerX" secondItem="xOo-7p-3YE" secondAttribute="centerX" id="sgy-ao-Dxf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZQ-XB-88p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="-31"/>
         </scene>
     </scenes>
 </document>

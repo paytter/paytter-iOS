@@ -47,6 +47,6 @@ extension CartViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: 詳細画面出す
+        presentViewController(ViewControllerFactory.cartItemDetailViewController(), animated: true, completion: nil)
     }
 }
