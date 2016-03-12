@@ -10,11 +10,18 @@
 		80A4E7772B1148862095A286 /* Pods_paytter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D3417BE87B3962AF4B42DD /* Pods_paytter.framework */; };
 		BE293E121C93CED000549261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E111C93CED000549261 /* AppDelegate.swift */; };
 		BE293E141C93CED000549261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E131C93CED000549261 /* ViewController.swift */; };
-		BE293E171C93CED000549261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E151C93CED000549261 /* Main.storyboard */; };
+		BE293E171C93CED000549261 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E151C93CED000549261 /* Scan.storyboard */; };
 		BE293E191C93CED000549261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE293E181C93CED000549261 /* Assets.xcassets */; };
 		BE293E1C1C93CED000549261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E1A1C93CED000549261 /* LaunchScreen.storyboard */; };
 		BE293E241C93D2B200549261 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E231C93D2B200549261 /* Cart.storyboard */; };
 		BE293E261C93D2B900549261 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E251C93D2B900549261 /* MyPage.storyboard */; };
+		BE293E281C93D48F00549261 /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E271C93D48F00549261 /* BarcodeScanViewController.swift */; };
+		BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E291C93D4A800549261 /* ImageScanViewController.swift */; };
+		BE293E2C1C93D4C700549261 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E2B1C93D4C700549261 /* CartViewController.swift */; };
+		BE293E2E1C93D4FD00549261 /* CartItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E2D1C93D4FD00549261 /* CartItemDetailViewController.swift */; };
+		BE293E301C93D50700549261 /* ScanItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */; };
+		BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E311C93D53E00549261 /* CartItemCell.swift */; };
+		BE293E341C93D58A00549261 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E331C93D58A00549261 /* MyPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +30,19 @@
 		BE293E0E1C93CECF00549261 /* paytter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paytter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE293E111C93CED000549261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE293E131C93CED000549261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE293E161C93CED000549261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE293E161C93CED000549261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scan.storyboard; sourceTree = "<group>"; };
 		BE293E181C93CED000549261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE293E1B1C93CED000549261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE293E1D1C93CED000549261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE293E231C93D2B200549261 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		BE293E251C93D2B900549261 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		BE293E271C93D48F00549261 /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
+		BE293E291C93D4A800549261 /* ImageScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScanViewController.swift; sourceTree = "<group>"; };
+		BE293E2B1C93D4C700549261 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		BE293E2D1C93D4FD00549261 /* CartItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemDetailViewController.swift; sourceTree = "<group>"; };
+		BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanItemDetailViewController.swift; sourceTree = "<group>"; };
+		BE293E311C93D53E00549261 /* CartItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		BE293E331C93D58A00549261 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +90,10 @@
 			children = (
 				BE293E111C93CED000549261 /* AppDelegate.swift */,
 				BE293E131C93CED000549261 /* ViewController.swift */,
-				BE293E151C93CED000549261 /* Main.storyboard */,
+				BE293E371C93D5B200549261 /* Scan */,
+				BE293E351C93D59E00549261 /* Cart */,
+				BE293E361C93D5A500549261 /* MyPage */,
+				BE293E151C93CED000549261 /* Scan.storyboard */,
 				BE293E231C93D2B200549261 /* Cart.storyboard */,
 				BE293E251C93D2B900549261 /* MyPage.storyboard */,
 				BE293E181C93CED000549261 /* Assets.xcassets */,
@@ -84,6 +101,34 @@
 				BE293E1D1C93CED000549261 /* Info.plist */,
 			);
 			path = paytter;
+			sourceTree = "<group>";
+		};
+		BE293E351C93D59E00549261 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				BE293E2B1C93D4C700549261 /* CartViewController.swift */,
+				BE293E2D1C93D4FD00549261 /* CartItemDetailViewController.swift */,
+				BE293E311C93D53E00549261 /* CartItemCell.swift */,
+			);
+			name = Cart;
+			sourceTree = "<group>";
+		};
+		BE293E361C93D5A500549261 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BE293E331C93D58A00549261 /* MyPageViewController.swift */,
+			);
+			name = MyPage;
+			sourceTree = "<group>";
+		};
+		BE293E371C93D5B200549261 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				BE293E271C93D48F00549261 /* BarcodeScanViewController.swift */,
+				BE293E291C93D4A800549261 /* ImageScanViewController.swift */,
+				BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */,
+			);
+			name = Scan;
 			sourceTree = "<group>";
 		};
 		D8F0EE9AF672C038DD2C563D /* Frameworks */ = {
@@ -159,7 +204,7 @@
 				BE293E261C93D2B900549261 /* MyPage.storyboard in Resources */,
 				BE293E1C1C93CED000549261 /* LaunchScreen.storyboard in Resources */,
 				BE293E191C93CED000549261 /* Assets.xcassets in Resources */,
-				BE293E171C93CED000549261 /* Main.storyboard in Resources */,
+				BE293E171C93CED000549261 /* Scan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,20 +263,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE293E2E1C93D4FD00549261 /* CartItemDetailViewController.swift in Sources */,
+				BE293E341C93D58A00549261 /* MyPageViewController.swift in Sources */,
 				BE293E141C93CED000549261 /* ViewController.swift in Sources */,
 				BE293E121C93CED000549261 /* AppDelegate.swift in Sources */,
+				BE293E301C93D50700549261 /* ScanItemDetailViewController.swift in Sources */,
+				BE293E2C1C93D4C700549261 /* CartViewController.swift in Sources */,
+				BE293E281C93D48F00549261 /* BarcodeScanViewController.swift in Sources */,
+				BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */,
+				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE293E151C93CED000549261 /* Main.storyboard */ = {
+		BE293E151C93CED000549261 /* Scan.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE293E161C93CED000549261 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Scan.storyboard;
 			sourceTree = "<group>";
 		};
 		BE293E1A1C93CED000549261 /* LaunchScreen.storyboard */ = {
