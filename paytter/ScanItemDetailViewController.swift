@@ -10,9 +10,28 @@ import UIKit
 
 class ScanItemDetailViewController: UIViewController {
 
+    var product: Product?
+    private var price = 0 {
+        didSet {
+            priceLabel.text = "\(price)円"
+            product?.price = price
+        }
+    }
+    private var quantity = 0 {
+        didSet {
+            quantityLabel.text = "\(quantity)個"
+            product?.detail?.quantity = quantity.description
+            price = (product?.price ?? 0) * quantity
+        }
+    }
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
-    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel! {
+        didSet {
+            priceLabel.text = "\(price)円"
+        }
+    }
     @IBOutlet private weak var productImageView: UIImageView!
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
@@ -35,14 +54,20 @@ class ScanItemDetailViewController: UIViewController {
     }
     
     @IBAction private func didTouchStepper(sender: UIStepper) {
-        print("didTouchStepper")
+        quantity = Int(sender.value)
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {
+        if let product = product {
+            Cart.sharedManager.products.append(product)
+        }
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction private func didTouchCloseButton(sender: UITapGestureRecognizer!) {
+        if let product = product {
+            Cart.sharedManager.products.append(product)
+        }
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

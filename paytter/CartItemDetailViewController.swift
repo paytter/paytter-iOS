@@ -10,9 +10,23 @@ import UIKit
 
 class CartItemDetailViewController: UIViewController {
 
+    private var price = 0 {
+        didSet {
+            if basePrice != 0 {
+                priceLabel.text = "\(price)円"
+                quantityLabel.text = "\(price / basePrice)個"
+            }
+        }
+    }
+    private var basePrice = 0
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
-    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel! {
+        didSet {
+            priceLabel.text = "\(price)円"
+        }
+    }
     @IBOutlet private weak var productImageView: UIImageView!
     @IBOutlet private weak var closeButton: UIButton! {
         didSet {
@@ -29,7 +43,7 @@ class CartItemDetailViewController: UIViewController {
     }
     
     @IBAction private func didTouchStepper(sender: UIStepper) {
-        print("didTouchStepper")
+        price = basePrice * Int(sender.value)
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {

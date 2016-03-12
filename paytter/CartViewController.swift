@@ -10,7 +10,7 @@ import UIKit
 
 class CartViewController: UIViewController {
 
-    private var products = [Product]() {
+    private var products = Cart.sharedManager.products {
         didSet {
             tableView.reloadData()
         }
@@ -19,7 +19,7 @@ class CartViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var totalPriceLabel: UILabel! {
         didSet {
-            totalPriceLabel.text = "0円"
+            totalPriceLabel.text = "\(Cart.sharedManager.getTotalPrice())円"
         }
     }
     
@@ -37,7 +37,7 @@ extension CartViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CartItemCell.kIdentifier, forIndexPath: indexPath) as! CartItemCell
-        cell.configure(product: products[indexPath.row])
+//        cell.configure(product: products[indexPath.row])
         return cell
     }
 }
@@ -52,6 +52,7 @@ extension CartViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        presentViewController(ViewControllerFactory.cartItemDetailViewController(), animated: true, completion: nil)
+        let cartItemDetailViewController = ViewControllerFactory.cartItemDetailViewController()
+        presentViewController(cartItemDetailViewController, animated: true, completion: nil)
     }
 }
