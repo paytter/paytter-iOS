@@ -28,6 +28,6 @@ final class ScanNavigationController: UINavigationController {
     }
 
     dynamic private func didTouchUserButton(sender: UIBarButtonItem) {
-        print("didTouchUserButton")
+        pushViewController(ViewControllerFactory.myPageViewController(), animated: true)
     }
 }

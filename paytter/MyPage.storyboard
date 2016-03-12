@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-434" y="342"/>
         </scene>
-        <!--View Controller-->
+        <!--My Page View Controller-->
         <scene sceneID="dT5-hm-Q7G">
             <objects>
-                <viewController id="aIT-zp-jgy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aIT-zp-jgy" customClass="MyPageViewController" customModule="paytter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="36u-4o-Lod"/>
                         <viewControllerLayoutGuide type="bottom" id="fC0-U5-0IW"/>
