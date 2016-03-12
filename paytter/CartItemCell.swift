@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CartItemCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    static let kIdentifier = "CartItemCell"
+    
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var quantityLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var productImageView: UIImageView!
+    
+    func configure(product product: Product) {
+        nameLabel.text = product.detail?.itemName
+        quantityLabel.text = product.detail?.quantity
+        priceLabel.text = product.price?.description
+        productImageView.af_setImageWithURL(NSURL(string: product.imageUrl ?? "")!)
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

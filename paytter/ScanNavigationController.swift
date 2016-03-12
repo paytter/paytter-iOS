@@ -24,7 +24,7 @@ final class ScanNavigationController: UINavigationController {
     }
     
     dynamic private func didTouchCartButton(sender: UIBarButtonItem) {
-        print("didTouchCartButton")
+        pushViewController(ViewControllerFactory.cartViewController(), animated: true)
     }
 
     dynamic private func didTouchUserButton(sender: UIBarButtonItem) {
