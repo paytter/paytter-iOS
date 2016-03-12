@@ -11,13 +11,17 @@ import UIKit
 final class ViewControllerFactory: NSObject {
     
     private enum StoryboardName: String {
+        case Main = "Main"
         case Scan = "Scan"
         case Cart = "Cart"
         case MyPage = "MyPage"
     }
+
+    enum MainClassName: String {
+        case MainTabBarController = "MainTabBarController"
+    }
     
     enum ScanClassName: String {
-        case ScanTabBarController = "ScanTabBarController"
         case ScanNavigationController = "ScanNavigationController"
         case BarcodeScanViewController = "BarcodeScanViewController"
         case ImageScanViewController = "ImageScanViewController"
@@ -33,6 +37,14 @@ final class ViewControllerFactory: NSObject {
     enum MyPageClassName: String {
         case MyPageNavigationController = "MyPageNavigationController"
         case MyPageViewController = "MyPageViewController"
+    }
+    
+    
+    // MARK: Main
+    
+    class func mainTabBarController() -> UITabBarController {
+        let storyboard = UIStoryboard(name: StoryboardName.Main.rawValue, bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier(MainClassName.MainTabBarController.rawValue) as! UITabBarController
     }
     
     // MARK: Scan
