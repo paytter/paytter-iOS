@@ -38,7 +38,7 @@ class Product: NSObject {
             brand = json["brand"].string
             itemName = json["itemName"].string
             maker = json["maker"].string
-            quantity = Int(json["quantity"].string!)
+            quantity = Int(json["quantity"].string ?? "0")
             releaseDate = json["releaseDate"].string
         }
         

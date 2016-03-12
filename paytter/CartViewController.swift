@@ -28,6 +28,12 @@ class CartViewController: UIViewController {
 
         navigationController?.topViewController?.title = "商品確認"
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }
 
 extension CartViewController: UITableViewDataSource {
@@ -37,8 +43,17 @@ extension CartViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CartItemCell.kIdentifier, forIndexPath: indexPath) as! CartItemCell
-//        cell.configure(product: products[indexPath.row])
+        cell.configure(product: products[indexPath.row])
         return cell
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // TODO: 削除API叩く
+        products.removeAtIndex(indexPath.row)
     }
 }
 
@@ -52,7 +67,9 @@ extension CartViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cartItemDetailViewController = ViewControllerFactory.cartItemDetailViewController()
+        cartItemDetailViewController.product = products[indexPath.row]
         presentViewController(cartItemDetailViewController, animated: true, completion: nil)
     }
 }

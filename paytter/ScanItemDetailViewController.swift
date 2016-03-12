@@ -11,7 +11,6 @@ import UIKit
 class ScanItemDetailViewController: UIViewController {
 
     var product: Product?
-    private var quantity = 0
     
     @IBOutlet private weak var nameLabel: UILabel! {
         didSet {
@@ -41,12 +40,10 @@ class ScanItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quantity = product?.detail?.quantity ?? 0
-        
-        priceLabel.text = "\((product?.price ?? 0) * quantity)円"
+        priceLabel.text = "\((product?.price ?? 0) * (product?.detail?.quantity ?? 0))円"
         quantityLabel.text = "\(product?.detail?.quantity ?? 0)個"
         
-        stepper.value = Double(quantity)
+        stepper.value = Double(product?.detail?.quantity ?? 0)
         
         if let url = NSURL(string: product?.imageUrl ?? "") {
             productImageView.af_setImageWithURL(url)
@@ -54,24 +51,14 @@ class ScanItemDetailViewController: UIViewController {
     }
     
     @IBAction private func didTouchStepper(sender: UIStepper) {
-        if quantity < Int(sender.value) {
+        if (product?.detail?.quantity ?? 0) < Int(sender.value) {
             product?.addItem()
-            addItem()
-        } else if quantity > Int(sender.value) {
+        } else if (product?.detail?.quantity ?? 0) > Int(sender.value) {
             product?.removeItem()
-            removeItem()
         }
 
-        priceLabel.text = "\((product?.price ?? 0) * quantity)円"
+        priceLabel.text = "\((product?.price ?? 0) * (product?.detail?.quantity ?? 0))円"
         quantityLabel.text = "\(product?.detail?.quantity ?? 0)個"
-    }
-    
-    private func addItem() {
-        quantity += 1
-    }
-
-    private func removeItem() {
-        quantity -= 1
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {

@@ -198,21 +198,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE7-X2-u6C">
                                 <rect key="frame" x="67" y="117" width="466" height="365"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKz-5B-1qf">
-                                        <rect key="frame" x="0.0" y="314" width="466" height="53"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.47450980390000003" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="53" id="PyT-Xq-EVd"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <state key="normal" title="購入をキャンセルする">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTouchCancelButton:" destination="ar9-hC-xNi" eventType="touchUpInside" id="49V-ed-UG0"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CVg-pC-iFK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CVg-pC-iFK">
                                         <rect key="frame" x="88" y="8" width="290" height="170"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シーチキンマヨネーズ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-ic-yJQ">
@@ -227,7 +213,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="4z0-XF-mnT">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="4z0-XF-mnT">
                                         <rect key="frame" x="364" y="222" width="94" height="29"/>
                                         <connections>
                                             <action selector="didTouchStepper:" destination="ar9-hC-xNi" eventType="valueChanged" id="wdX-L8-mYy"/>
@@ -255,16 +241,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="wKz-5B-1qf" secondAttribute="trailing" id="1PX-x5-DH7"/>
-                                    <constraint firstAttribute="bottom" secondItem="wKz-5B-1qf" secondAttribute="bottom" constant="-2" id="EvJ-0g-VQf"/>
                                     <constraint firstItem="3O0-g8-wjC" firstAttribute="trailing" secondItem="ip4-lo-JYd" secondAttribute="trailing" id="Fc8-wG-pj4"/>
                                     <constraint firstItem="cOA-JS-c4u" firstAttribute="top" secondItem="CVg-pC-iFK" secondAttribute="top" id="Hsl-XU-4LE"/>
                                     <constraint firstItem="4z0-XF-mnT" firstAttribute="trailing" secondItem="mE7-X2-u6C" secondAttribute="trailingMargin" id="K4H-vA-utU"/>
                                     <constraint firstItem="3O0-g8-wjC" firstAttribute="trailing" secondItem="wgp-ic-yJQ" secondAttribute="trailing" id="MML-2c-E2T"/>
-                                    <constraint firstItem="wKz-5B-1qf" firstAttribute="leading" secondItem="mE7-X2-u6C" secondAttribute="leading" id="VUr-D5-4Z5"/>
-                                    <constraint firstItem="wKz-5B-1qf" firstAttribute="top" secondItem="ip4-lo-JYd" secondAttribute="bottom" constant="8" symbolic="YES" id="Vmz-Vb-aju"/>
                                     <constraint firstItem="CVg-pC-iFK" firstAttribute="top" secondItem="mE7-X2-u6C" secondAttribute="topMargin" id="W4s-GJ-Rsd"/>
                                     <constraint firstItem="3O0-g8-wjC" firstAttribute="leading" secondItem="ip4-lo-JYd" secondAttribute="leading" id="X9E-yb-2YG"/>
+                                    <constraint firstAttribute="bottom" secondItem="ip4-lo-JYd" secondAttribute="bottom" constant="59" id="fkz-4R-gUP"/>
                                     <constraint firstItem="4z0-XF-mnT" firstAttribute="top" secondItem="CVg-pC-iFK" secondAttribute="bottom" constant="44" id="gfL-jZ-Oke"/>
                                     <constraint firstItem="ip4-lo-JYd" firstAttribute="leading" secondItem="mE7-X2-u6C" secondAttribute="leadingMargin" id="h5Q-tg-1Dc"/>
                                     <constraint firstItem="3O0-g8-wjC" firstAttribute="top" secondItem="wgp-ic-yJQ" secondAttribute="bottom" constant="8" symbolic="YES" id="hzR-f3-eDX"/>
@@ -274,7 +257,7 @@
                                     <constraint firstItem="CVg-pC-iFK" firstAttribute="leading" secondItem="mE7-X2-u6C" secondAttribute="leading" constant="88" id="qcL-Lm-vAM"/>
                                     <constraint firstItem="cOA-JS-c4u" firstAttribute="leading" secondItem="wgp-ic-yJQ" secondAttribute="leading" id="rt1-5c-BIS"/>
                                     <constraint firstItem="ip4-lo-JYd" firstAttribute="top" secondItem="3O0-g8-wjC" secondAttribute="bottom" constant="16" id="w0L-GI-SWQ"/>
-                                    <constraint firstItem="wKz-5B-1qf" firstAttribute="centerX" secondItem="CVg-pC-iFK" secondAttribute="centerX" id="yVX-ri-dbb"/>
+                                    <constraint firstItem="CVg-pC-iFK" firstAttribute="centerX" secondItem="mE7-X2-u6C" secondAttribute="centerX" id="yLs-iO-wEo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -296,6 +279,7 @@
                         <outlet property="priceLabel" destination="ip4-lo-JYd" id="Spg-1g-7x4"/>
                         <outlet property="productImageView" destination="CVg-pC-iFK" id="7bP-DV-KhC"/>
                         <outlet property="quantityLabel" destination="3O0-g8-wjC" id="uDb-xo-lTa"/>
+                        <outlet property="stepper" destination="4z0-XF-mnT" id="eyC-pm-lLM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZQ-XB-88p" userLabel="First Responder" sceneMemberID="firstResponder"/>
