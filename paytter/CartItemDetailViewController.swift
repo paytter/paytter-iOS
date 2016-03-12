@@ -14,6 +14,11 @@ class CartItemDetailViewController: UIViewController {
     @IBOutlet private weak var quantityLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var productImageView: UIImageView!
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+            closeButton.setTitle(Icon.kClose, forState: .Normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,10 @@ class CartItemDetailViewController: UIViewController {
     }
     
     @IBAction private func didTouchOutView(sender: UITapGestureRecognizer!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction private func didTouchCloseButton(sender: UITapGestureRecognizer!) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
