@@ -32,6 +32,7 @@
 		BE293E491C93FEB600549261 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E481C93FEB600549261 /* Icon.swift */; };
 		BE293E4C1C943C1F00549261 /* BeaconScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E4B1C943C1F00549261 /* BeaconScanner.swift */; };
 		BE293E4E1C94686E00549261 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E4D1C94686E00549261 /* Cart.swift */; };
+		BFF16F3D1C948AE0002EE59F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF16F3C1C948AE0002EE59F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		BE293E481C93FEB600549261 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		BE293E4B1C943C1F00549261 /* BeaconScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconScanner.swift; sourceTree = "<group>"; };
 		BE293E4D1C94686E00549261 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		BFF16F3C1C948AE0002EE59F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 				BE293E421C93E9D500549261 /* Shopping.swift */,
 				BE293E441C93ED0600549261 /* Product.swift */,
 				BE293E4D1C94686E00549261 /* Cart.swift */,
+				BFF16F3C1C948AE0002EE59F /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */,
 				BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */,
 				BE293E471C93EFEE00549261 /* APIManager.swift in Sources */,
+				BFF16F3D1C948AE0002EE59F /* User.swift in Sources */,
 				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
 				BE293E491C93FEB600549261 /* Icon.swift in Sources */,
 				BE293E451C93ED0600549261 /* Product.swift in Sources */,

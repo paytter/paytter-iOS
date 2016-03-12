@@ -86,7 +86,7 @@ class APIManager: NSObject {
             mutableURLRequest.HTTPMethod = method.rawValue
 
             let userDefaults = NSUserDefaults.standardUserDefaults()
-            if let token = userDefaults.objectForKey("accessToken") {
+            if let token = userDefaults.objectForKey("mufgAccessToken") {
                 print("accessToken = \(token)")
                 mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             }
@@ -134,6 +134,15 @@ class APIManager: NSObject {
                 }
             }
         }
+    }
 
+    func getUserProfile() {
+        Alamofire.request(APIManager.Router.ReadUser()).responseJSON(completionHandler: { response in
+            if (response.result.isSuccess) {
+                let result = response.result.value
+                let user = User.init(json: JSON(result!))
+                user.save()
+            }
+        })
     }
 }
