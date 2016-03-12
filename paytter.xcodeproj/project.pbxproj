@@ -25,6 +25,7 @@
 		BE293E391C93D63900549261 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E381C93D63900549261 /* ViewControllerFactory.swift */; };
 		BE293E3C1C93D9C700549261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE293E3B1C93D9C700549261 /* Main.storyboard */; };
 		BE293E3E1C93DD3A00549261 /* UIColor+AppDefinedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */; };
+		BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E401C93E35B00549261 /* ScanNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		BE293E381C93D63900549261 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		BE293E3B1C93D9C700549261 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BE293E3D1C93DD3A00549261 /* UIColor+AppDefinedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppDefinedColor.swift"; sourceTree = "<group>"; };
+		BE293E401C93E35B00549261 /* ScanNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNavigationController.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				BE293E271C93D48F00549261 /* BarcodeScanViewController.swift */,
 				BE293E291C93D4A800549261 /* ImageScanViewController.swift */,
 				BE293E2F1C93D50700549261 /* ScanItemDetailViewController.swift */,
+				BE293E401C93E35B00549261 /* ScanNavigationController.swift */,
 			);
 			name = Scan;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				BE293E2C1C93D4C700549261 /* CartViewController.swift in Sources */,
 				BE293E281C93D48F00549261 /* BarcodeScanViewController.swift in Sources */,
 				BE293E321C93D53E00549261 /* CartItemCell.swift in Sources */,
+				BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */,
 				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

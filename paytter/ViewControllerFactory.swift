@@ -22,7 +22,8 @@ final class ViewControllerFactory: NSObject {
     }
     
     enum ScanClassName: String {
-        case ScanNavigationController = "ScanNavigationController"
+        case BarcodeScanNavigationController = "BarcodeScanNavigationController"
+        case ItemScanNavigationController = "ItemScanNavigationController"
         case BarcodeScanViewController = "BarcodeScanViewController"
         case ImageScanViewController = "ImageScanViewController"
         case ScanItemDetailViewController = "ScanItemDetailViewController"
@@ -46,12 +47,18 @@ final class ViewControllerFactory: NSObject {
         let storyboard = UIStoryboard(name: StoryboardName.Main.rawValue, bundle: nil)
         return storyboard.instantiateViewControllerWithIdentifier(MainClassName.MainTabBarController.rawValue) as! UITabBarController
     }
+
     
     // MARK: Scan
 
-    class func scanNavigationController() -> UINavigationController {
+    class func barcodeScanNavigationController() -> ScanNavigationController {
         let storyboard = UIStoryboard(name: StoryboardName.Scan.rawValue, bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier(ScanClassName.ScanNavigationController.rawValue) as! UINavigationController
+        return storyboard.instantiateViewControllerWithIdentifier(ScanClassName.BarcodeScanNavigationController.rawValue) as! ScanNavigationController
+    }
+    
+    class func itemScanNavigationController() -> ScanNavigationController {
+        let storyboard = UIStoryboard(name: StoryboardName.Scan.rawValue, bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier(ScanClassName.ItemScanNavigationController.rawValue) as! ScanNavigationController
     }
     
     class func barcodeScanViewController() -> BarcodeScanViewController {

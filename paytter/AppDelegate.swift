@@ -46,12 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureTabbarController() {
-        let rankingNavigationController = ViewControllerFactory.barcodeScanViewController()
+        let rankingNavigationController = ViewControllerFactory.barcodeScanNavigationController()
         rankingNavigationController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Barcode, textColor: UIColor.grayColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
         rankingNavigationController.tabBarItem.selectedImage = UIImage.fontAwesomeIconWithName(.Barcode, textColor: UIColor.navigationBarColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
         rankingNavigationController.tabBarItem.title = "バーコード"
         
-        let searchNavigationController = ViewControllerFactory.imageScanViewController()
+        let searchNavigationController = ViewControllerFactory.itemScanNavigationController()
         searchNavigationController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Photo, textColor: UIColor.grayColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
         searchNavigationController.tabBarItem.selectedImage = UIImage.fontAwesomeIconWithName(.Photo, textColor: UIColor.navigationBarColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
         searchNavigationController.tabBarItem.title = "画像"
