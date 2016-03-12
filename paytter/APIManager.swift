@@ -42,22 +42,13 @@ class APIManager: NSObject {
         static let baseURLString = "https://demo-ap08-prod.apigee.net/v1"
         static var OAuthToken: String?
 
-        case CreateUser([String: AnyObject])
         case ReadUser()
-        case UpdateUser(String, [String: AnyObject])
-        case DestroyUser(String)
         case Transfer(String, [String: AnyObject])
 
         var method: Alamofire.Method {
             switch self {
-            case .CreateUser:
-                return .POST
             case .ReadUser:
                 return .GET
-            case .UpdateUser:
-                return .PUT
-            case .DestroyUser:
-                return .DELETE
             case .Transfer:
                 return .POST
             }
@@ -65,14 +56,8 @@ class APIManager: NSObject {
 
         var path: String {
             switch self {
-            case .CreateUser:
-                return "/users"
             case .ReadUser():
                 return "/users/me"
-            case .UpdateUser(let username, _):
-                return "/users/\(username)"
-            case .DestroyUser(let username):
-                return "/users/\(username)"
             case .Transfer(let myAccountId, _):
                 return "/accounts/\(myAccountId)/transfers"
             }
@@ -92,10 +77,6 @@ class APIManager: NSObject {
             }
 
             switch self {
-            case .CreateUser(let parameters):
-                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
-            case .UpdateUser(_, let parameters):
-                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             case .Transfer(_, let parameters):
                 mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
