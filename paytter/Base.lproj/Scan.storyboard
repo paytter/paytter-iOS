@@ -38,6 +38,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="322" y="387"/>
+        </scene>
+        <!--Barcode Scan View Controller-->
+        <scene sceneID="NCX-Ar-X9j">
+            <objects>
+                <viewController storyboardIdentifier="BarcodeScanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z4T-rV-fMA" customClass="BarcodeScanViewController" customModule="paytter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bL0-ub-1Lg"/>
+                        <viewControllerLayoutGuide type="bottom" id="GHz-5i-Iqw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dTR-2f-y26">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npn-hH-Tcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="1060"/>
+        </scene>
+        <!--Image Scan View Controller-->
+        <scene sceneID="5yH-ik-1IK">
+            <objects>
+                <viewController storyboardIdentifier="ImageScanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GQr-6J-URr" customClass="ImageScanViewController" customModule="paytter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GrE-Vr-ct2"/>
+                        <viewControllerLayoutGuide type="bottom" id="kWe-l6-oai"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VdK-Tx-GpZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Gs-zj-Pbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013" y="1060"/>
         </scene>
     </scenes>
 </document>

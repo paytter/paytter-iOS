@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let tabBarController = ViewControllerFactory.mainTabBarController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        configureTabbarController()
+        
         return true
     }
 
@@ -41,6 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func configureTabbarController() {
+        let rankingNavigationController = ViewControllerFactory.barcodeScanViewController()
+        rankingNavigationController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Barcode, textColor: UIColor.grayColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
+        rankingNavigationController.tabBarItem.selectedImage = UIImage.fontAwesomeIconWithName(.Barcode, textColor: UIColor.navigationBarColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
+        rankingNavigationController.tabBarItem.title = "バーコード"
+        
+        let searchNavigationController = ViewControllerFactory.imageScanViewController()
+        searchNavigationController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Photo, textColor: UIColor.grayColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
+        searchNavigationController.tabBarItem.selectedImage = UIImage.fontAwesomeIconWithName(.Photo, textColor: UIColor.navigationBarColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
+        searchNavigationController.tabBarItem.title = "画像"
+        
+        tabBarController.setViewControllers([rankingNavigationController,
+            searchNavigationController], animated: false)
+        
+        window?.rootViewController = tabBarController
+    }
 }
 
