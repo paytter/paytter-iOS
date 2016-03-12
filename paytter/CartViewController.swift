@@ -17,6 +17,11 @@ class CartViewController: UIViewController {
     }
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var totalPriceLabel: UILabel! {
+        didSet {
+            totalPriceLabel.text = "0円"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
