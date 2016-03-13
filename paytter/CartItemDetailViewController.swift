@@ -39,8 +39,10 @@ class CartItemDetailViewController: UIViewController {
     @IBAction private func didTouchStepper(sender: UIStepper) {
         if (product?.detail?.quantity ?? 0) < Int(sender.value) {
             product?.addItem()
+            APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.Increase))
         } else if (product?.detail?.quantity ?? 0) > Int(sender.value) {
             product?.removeItem()
+            APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.Decrease))
         }
         
         priceLabel.text = "\((product?.price ?? 0) * (product?.detail?.quantity ?? 0))円"

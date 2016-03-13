@@ -53,8 +53,10 @@ class ScanItemDetailViewController: UIViewController {
     @IBAction private func didTouchStepper(sender: UIStepper) {
         if (product?.detail?.quantity ?? 0) < Int(sender.value) {
             product?.addItem()
+            APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.Increase))
         } else if (product?.detail?.quantity ?? 0) > Int(sender.value) {
             product?.removeItem()
+        APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.Decrease))
         }
 
         priceLabel.text = "\((product?.price ?? 0) * (product?.detail?.quantity ?? 0))円"
@@ -72,6 +74,19 @@ class ScanItemDetailViewController: UIViewController {
         if let product = product {
             Cart.sharedManager.products.append(product)
         }
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction private func didTouchInCart(sender: UIButton) {
+        if let product = product {
+            Cart.sharedManager.products.append(product)
+        }
+        APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.New))
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction private func didTouchCancel(sender: UIButton) {
+        APIManager.sharedManager.postShopping(Shopping(productId: product?.itemId ?? "", numberOfProduct: (product?.detail?.quantity)!, storeId: 1, action: Shopping.Action.Cancel))
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

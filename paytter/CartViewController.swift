@@ -13,6 +13,7 @@ class CartViewController: UIViewController {
     private var products = Cart.sharedManager.products {
         didSet {
             tableView.reloadData()
+            totalPriceLabel.text = "\(Cart.sharedManager.getTotalPrice())円"
         }
     }
     
@@ -38,6 +39,8 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        totalPriceLabel.text = "\(Cart.sharedManager.getTotalPrice())円"
+        
         return products.count
     }
     
@@ -52,7 +55,7 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: 削除API叩く
+        APIManager.sharedManager.postShopping(Shopping(productId: products[indexPath.row].itemId ?? "", numberOfProduct: (products[indexPath.row].detail?.quantity)!, storeId: 1, action: Shopping.Action.Cancel))
         products.removeAtIndex(indexPath.row)
     }
 }
