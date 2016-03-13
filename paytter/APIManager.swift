@@ -22,6 +22,13 @@ class APIManager: NSObject {
         configureNotificationStyle()
     }
     
+    private var headers: [String : String] {
+        get {
+//            return NSUserDefaults.standardUserDefaults().objectForKey("headers") as? [String : String] ?? ["" : ""]
+            return ["Authorization" : "y32aBv6m4s2NDgGpvzCg1abDAJsaFTqa"]
+        }
+    }
+    
     private func configureNotificationStyle() {
         JDStatusBarNotification.addStyleNamed("style", prepare: {
             (style: JDStatusBarStyle!) -> JDStatusBarStyle! in
@@ -36,11 +43,14 @@ class APIManager: NSObject {
     
     // MARK: GET Methods
     
-    func getProduct(storeId storeId: Int, eanId: Int?, isbnId: Int?, itemIds: String, completion: (product: Product) -> Void) {
+    func getProduct(storeId storeId: Int, eanId: Int?, isbnId: Int?, itemIds: String?, completion: (product: Product) -> Void) {
         let url = kHostURL + "products/search"
         
         var params: [String : AnyObject] = ["store_id" : storeId]
-        params["item_ids"] = itemIds
+        
+        if let itemIds = itemIds {
+            params["item_ids"] = itemIds
+        }
         if let eanId = eanId {
             params["ean_id"] = eanId
         }
@@ -65,12 +75,13 @@ class APIManager: NSObject {
     
     func postShopping(shopping: Shopping) {
         let url = kHostURL + "shoppings"
-        Alamofire.request(.POST, url, parameters: shopping.convertToParams())
+        Alamofire.request(.POST, url, parameters: shopping.convertToParams(), headers: headers)
     }
 
     func postPurchase(purchase: Purchase) {
         let url = kHostURL + "purchases"
-        Alamofire.request(.POST, url, parameters: purchase.convertToParams())
+        Alamofire.request(.POST, url, parameters: purchase.convertToParams(), headers: headers)
+        Cart.sharedManager.products.removeAll()
     }
 
     func postUser(params: [String: AnyObject]) {
@@ -82,7 +93,9 @@ class APIManager: NSObject {
                         if let accessToken = json["access_token"] as? String {
                             let userDefaults = NSUserDefaults.standardUserDefaults()
                             userDefaults.setObject(accessToken, forKey: "userAccessToken")
+                            userDefaults.setObject("Authorization: \(accessToken)", forKey: "header")
                             userDefaults.synchronize()
+                            print(userDefaults.objectForKey("header"))                            
                         }
                     }
                 } else {
@@ -94,7 +107,7 @@ class APIManager: NSObject {
     func postUserImage(userImage: UIImage) {
         let url = kHostURL + "users/upload"
         
-        Alamofire.upload(.POST, url, multipartFormData: {
+        Alamofire.upload(.POST, url, headers: headers, multipartFormData: {
             (multipartFormData: MultipartFormData) -> Void in
             multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(userImage, 0.0)!, name: "image")
             }) { (encodingResult: Manager.MultipartFormDataEncodingResult) -> Void in

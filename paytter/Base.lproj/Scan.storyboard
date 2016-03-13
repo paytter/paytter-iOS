@@ -230,6 +230,9 @@
                                                         <integer key="value" value="28"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didTouchCancel:" destination="vI5-rZ-TSg" eventType="touchUpInside" id="Afk-aH-4h5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVz-2K-eP5">
                                                 <rect key="frame" x="160" y="0.0" width="56" height="56"/>
@@ -246,6 +249,9 @@
                                                         <integer key="value" value="28"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didTouchInCart:" destination="vI5-rZ-TSg" eventType="touchUpInside" id="21I-yZ-u6o"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

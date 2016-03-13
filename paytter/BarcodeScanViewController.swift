@@ -92,6 +92,13 @@ class BarcodeScanViewController: UIViewController {
     private func foundCode(code: String) {
         print(code)
         // NOTE: ここにバーコードを読み取り成功時の処理を書きます
+        
+        APIManager.sharedManager.getProduct(storeId: 1, eanId: Int(code)!, isbnId: nil, itemIds: nil, completion: {
+            (product: Product) -> Void in
+            let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
+            scanItemDetailViewController.product = product
+            self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
+        })
     }
     
     private func failed() {
