@@ -7,6 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FontAwesome.otf">
+            <string>FontAwesome</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Btb-AG-haK">
@@ -123,10 +128,25 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="LhS-P7-JnN"/>
+                    <navigationItem key="navigationItem" id="LhS-P7-JnN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="8Me-tb-WzI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mDt-4a-0M7">
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
+                                <state key="normal" title="\u">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchCloseButton:" destination="aIT-zp-jgy" eventType="touchUpInside" id="xhE-9E-0uC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="authButton" destination="qNO-Jw-hV5" id="xrQ-DR-n0g"/>
+                        <outlet property="closeButton" destination="mDt-4a-0M7" id="eoq-wf-X0m"/>
                         <outlet property="emailLabel" destination="xAP-DY-zWx" id="KGL-nB-loA"/>
                         <outlet property="nameLabel" destination="qOk-Rd-5wn" id="bV0-Ql-qeN"/>
                         <outlet property="profileImageView" destination="iXa-0J-y07" id="awt-rd-vC0"/>

@@ -15,7 +15,12 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-
+    @IBOutlet private weak var closeButton: UIButton! {
+        didSet {
+            closeButton.setTitle(Icon.kClose, forState: .Normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,5 +62,9 @@ class MyPageViewController: UIViewController {
         profileImageView.layoutIfNeeded()
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2.0
         profileImageView.layer.masksToBounds = true
+    }
+    
+    @IBAction private func didTouchCloseButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
