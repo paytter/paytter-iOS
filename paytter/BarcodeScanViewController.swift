@@ -132,5 +132,10 @@ extension BarcodeScanViewController: BeaconScannerDelegate {
         print(rssi, distance)
         rssiLabel.text = "RSSI: \(rssi)"
         distanceLabel.text = "distance: \(distance)"
+        
+        if distance == "Far" {
+            let purchase = Purchase(storeId: 1)
+            APIManager.sharedManager.postPurchase(purchase)
+        }
     }
 }

@@ -9,7 +9,7 @@
 import SwiftyJSON
 
 class Shopping: NSObject {
-    var productId: Int?
+    var productId: String?
     var numberOfProduct: Int?
     var storeId: Int?
     var action: Action?
@@ -21,7 +21,7 @@ class Shopping: NSObject {
         case Cancel = "cancel"
     }
     
-    init(productId: Int, numberOfProduct: Int, storeId: Int, action: Action) {
+    init(productId: String, numberOfProduct: Int, storeId: Int, action: Action) {
         self.productId = productId
         self.numberOfProduct = numberOfProduct
         self.storeId = storeId
@@ -30,7 +30,7 @@ class Shopping: NSObject {
     
     func convertToParams() -> [String : AnyObject] {
         let params = ["shopping" :
-        ["product_id": productId ?? 0,
+        ["product_id": productId ?? "",
             "number_of_product" : numberOfProduct ?? 0,
             "store_id": storeId ?? 0,
             "action": action?.rawValue ?? ""]]

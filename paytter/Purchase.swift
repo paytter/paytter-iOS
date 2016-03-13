@@ -9,26 +9,25 @@
 import SwiftyJSON
 
 class Purchase: NSObject {
-    var productId: Int?
-    var numberOfProducts: Int?
     var storeId: Int?
-    var totalAmounts: Int?
     
-    init(productId: Int, numberOfProducts: Int, storeId: Int, totalAmounts: Int) {
-        self.productId = productId
-        self.numberOfProducts = numberOfProducts
+    init(storeId: Int) {
         self.storeId = storeId
-        self.totalAmounts = totalAmounts
     }
     
     func convertToParams() -> [String : AnyObject] {
+        var informationValues = [AnyObject]()
+        var informationValue = [String : String]()
+        for product in Cart.sharedManager.products {
+            informationValue["product_id"] = product.itemId ?? ""
+            informationValue["number_of_products"] = product.detail?.quantity?.description ?? ""
+            informationValues.append(informationValue)
+        }
+        
         let params = ["purchase" :
             ["store_id": storeId ?? 0,
-                "total_amounts" : totalAmounts ?? 0,
-                "purchase_informations": [
-                    "product_id" : productId ?? 0,
-                    "number_of_products" : numberOfProducts ?? 0
-                ]
+                "total_amounts" : Cart.sharedManager.getTotalPrice() ?? 0,
+                "purchase_informations": informationValues
             ]
         ]
         
