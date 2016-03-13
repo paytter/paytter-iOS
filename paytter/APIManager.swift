@@ -61,6 +61,12 @@ class APIManager: NSObject {
     }
 
 
+    // MARK: Post Methods
+    
+    func postShopping(shopping: Shopping) {
+        let url = kHostURL + "shoppings"
+        Alamofire.request(.POST, url, parameters: shopping.convertToParams())
+    }
 
     func postPurchase(purchase: Purchase) {
         let url = kHostURL + "purchases"

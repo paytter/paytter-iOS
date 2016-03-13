@@ -12,26 +12,28 @@ class Shopping: NSObject {
     var productId: Int?
     var numberOfProduct: Int?
     var storeId: Int?
-    var action: String?
+    var action: Action?
     
-    override init() {
+    enum Action: String {
+        case New = "new"
+        case Increase = "increase"
+        case Decrease = "decrease"
+        case Cancel = "cancel"
     }
     
-    func convertToParams() -> [String : String] {
-        var params: [String : String] = [:]
-        
-        if let productId = productId {
-            params["product_id"] = productId.description
-        }
-        if let numberOfProduct = numberOfProduct {
-            params["number_of_product"] = numberOfProduct.description
-        }
-        if let storeId = storeId {
-            params["store_id"] = storeId.description
-        }
-        if let action = action {
-            params["action"] = action
-        }
+    init(productId: Int, numberOfProduct: Int, storeId: Int, action: Action) {
+        self.productId = productId
+        self.numberOfProduct = numberOfProduct
+        self.storeId = storeId
+        self.action = action
+    }
+    
+    func convertToParams() -> [String : AnyObject] {
+        let params = ["shopping" :
+        ["product_id": productId ?? 0,
+            "number_of_product" : numberOfProduct ?? 0,
+            "store_id": storeId ?? 0,
+            "action": action?.rawValue ?? ""]]
         
         return params
     }
