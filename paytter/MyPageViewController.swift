@@ -21,7 +21,6 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-
     private var authorizeResponseJson: [String : AnyObject]!
 
     override func viewDidLoad() {
@@ -30,6 +29,8 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         navigationController?.topViewController?.title = "マイページ"
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUserInterface", name: UIApplicationDidBecomeActiveNotification, object: nil)
         updateUserInterface()
+        
+        APIManager.sharedManager.postUserImage(profileImageView.image!)
     }
 
     @IBAction func authenticate(sender: UIButton) {
@@ -55,7 +56,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                     if let response = result as? [String : AnyObject] {
                         // NOTE: OAuth認証で返ってきたレスポンスをそのまま保持しておきます(その後カメラを開く)
                         self.authorizeResponseJson = response
-                        self.openImagePicker()
+//                        self.openImagePicker()
                     }
                 })
                 let user = User.find()
@@ -80,9 +81,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     func openImagePicker() {
         let imagePickerController = UIImagePickerController();
         imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePickerController.sourceType = .Camera
         // UIImagePickerControllerSourceType.PhotoLibraryでアルバムへのアクセス
-        self.presentViewController(imagePickerController, animated:true, completion:nil)
+        presentViewController(imagePickerController, animated:true, completion:nil)
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -100,5 +101,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction private func didTouchCloseButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction private func didTouchUserImage(sender: UIImageView) {
+        presentViewController(ViewControllerFactory.myPageSelectPhotoNavigationController(), animated: true, completion: nil)
     }
 }

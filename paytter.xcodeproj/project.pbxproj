@@ -33,6 +33,9 @@
 		BE293E4C1C943C1F00549261 /* BeaconScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E4B1C943C1F00549261 /* BeaconScanner.swift */; };
 		BE293E4E1C94686E00549261 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E4D1C94686E00549261 /* Cart.swift */; };
 		BE293E501C94F72E00549261 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E4F1C94F72E00549261 /* Purchase.swift */; };
+		BE293E521C950BBB00549261 /* MyPageSelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E511C950BBB00549261 /* MyPageSelectPhotoViewController.swift */; };
+		BE293E541C950C1200549261 /* SelectPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E531C950C1200549261 /* SelectPhotoCollectionViewCell.swift */; };
+		BE293E561C950DEF00549261 /* SelectPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE293E551C950DEF00549261 /* SelectPhotoDetailViewController.swift */; };
 		BFF16F3D1C948AE0002EE59F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF16F3C1C948AE0002EE59F /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		BE293E4B1C943C1F00549261 /* BeaconScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconScanner.swift; sourceTree = "<group>"; };
 		BE293E4D1C94686E00549261 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		BE293E4F1C94F72E00549261 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		BE293E511C950BBB00549261 /* MyPageSelectPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageSelectPhotoViewController.swift; sourceTree = "<group>"; };
+		BE293E531C950C1200549261 /* SelectPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE293E551C950DEF00549261 /* SelectPhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoDetailViewController.swift; sourceTree = "<group>"; };
 		BFF16F3C1C948AE0002EE59F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paytter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paytter/Pods-paytter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				BE293E331C93D58A00549261 /* MyPageViewController.swift */,
+				BE293E511C950BBB00549261 /* MyPageSelectPhotoViewController.swift */,
+				BE293E531C950C1200549261 /* SelectPhotoCollectionViewCell.swift */,
+				BE293E551C950DEF00549261 /* SelectPhotoDetailViewController.swift */,
 			);
 			name = MyPage;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 				TargetAttributes = {
 					BE293E0D1C93CECF00549261 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 52ZSVX3TML;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -345,9 +355,12 @@
 				BE293E411C93E35B00549261 /* ScanNavigationController.swift in Sources */,
 				BE293E471C93EFEE00549261 /* APIManager.swift in Sources */,
 				BFF16F3D1C948AE0002EE59F /* User.swift in Sources */,
+				BE293E521C950BBB00549261 /* MyPageSelectPhotoViewController.swift in Sources */,
+				BE293E541C950C1200549261 /* SelectPhotoCollectionViewCell.swift in Sources */,
 				BE293E501C94F72E00549261 /* Purchase.swift in Sources */,
 				BE293E2A1C93D4A800549261 /* ImageScanViewController.swift in Sources */,
 				BE293E491C93FEB600549261 /* Icon.swift in Sources */,
+				BE293E561C950DEF00549261 /* SelectPhotoDetailViewController.swift in Sources */,
 				BE293E451C93ED0600549261 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,10 +475,13 @@
 			baseConfigurationReference = EB25DF6EFE1244DA085B9D04 /* Pods-paytter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = paytter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itf.paytter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -474,10 +490,13 @@
 			baseConfigurationReference = 2DF8D9BFA5FCAEAC903310AC /* Pods-paytter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = paytter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itf.paytter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

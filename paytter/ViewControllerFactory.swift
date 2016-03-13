@@ -38,6 +38,9 @@ final class ViewControllerFactory: NSObject {
     enum MyPageClassName: String {
         case MyPageNavigationController = "MyPageNavigationController"
         case MyPageViewController = "MyPageViewController"
+        case MyPageSelectPhotoViewController = "MyPageSelectPhotoViewController"
+        case SelectPhotoDetailViewController = "SelectPhotoDetailViewController"
+        case MyPageSelectPhotoNavigationController = "MyPageSelectPhotoNavigationController"
     }
     
     
@@ -111,6 +114,21 @@ final class ViewControllerFactory: NSObject {
     class func myPageViewController() -> MyPageViewController {
         let storyboard = UIStoryboard(name: StoryboardName.MyPage.rawValue, bundle: nil)
         return storyboard.instantiateViewControllerWithIdentifier(MyPageClassName.MyPageViewController.rawValue) as! MyPageViewController
+    }
+    
+    class func myPageSelectPhotoViewController() -> MyPageSelectPhotoViewController {
+        let storyboard = UIStoryboard(name: StoryboardName.MyPage.rawValue, bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier(MyPageClassName.MyPageSelectPhotoViewController.rawValue) as! MyPageSelectPhotoViewController
+    }
+    
+    class func selectPhotoDetailViewController() -> SelectPhotoDetailViewController {
+        let storyboard = UIStoryboard(name: StoryboardName.MyPage.rawValue, bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier(MyPageClassName.SelectPhotoDetailViewController.rawValue) as! SelectPhotoDetailViewController
+    }
+    
+    class func myPageSelectPhotoNavigationController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: StoryboardName.MyPage.rawValue, bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier(MyPageClassName.MyPageSelectPhotoNavigationController.rawValue) as! UINavigationController
     }
 }
 

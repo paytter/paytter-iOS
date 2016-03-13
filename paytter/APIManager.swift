@@ -91,6 +91,26 @@ class APIManager: NSObject {
         }
     }
 
+    func postUserImage(userImage: UIImage) {
+        let url = kHostURL + "users/upload"
+        
+        Alamofire.upload(.POST, url, multipartFormData: {
+            (multipartFormData: MultipartFormData) -> Void in
+            multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(userImage, 0.0)!, name: "image")
+            }) { (encodingResult: Manager.MultipartFormDataEncodingResult) -> Void in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        if let json = response.result.value {
+                            print(JSON(json))
+                        }
+                    }
+                case .Failure(let encodingError):
+                    print(encodingError)
+            }
+        }
+    }
+
     
     // MARK: FinTech API's Router
 
