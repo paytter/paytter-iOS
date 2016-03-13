@@ -21,16 +21,15 @@ class BarcodeScanViewController: UIViewController {
     @IBOutlet private weak var scanButton: UIButton!
     @IBOutlet private weak var rssiLabel: UILabel!
     @IBOutlet private weak var distanceLabel: UILabel!
-    @IBOutlet private weak var sampleImageView: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareScan()
+        // NOTE: このコメントを外すとバーコード読み取りが動き出す
         captureSession.startRunning();
 
-        // NOTE: このコメントを外すとバーコード読み取りが動き出す
-//        BeaconScanner.sharedManager.delegate = self
+        BeaconScanner.sharedManager.delegate = self
 
 //        APIManager.sharedManager.getProduct(storeId: 1, eanId: nil, isbnId: nil, itemIds: "food_0000121261", completion: {
 //            (product: Product) -> Void in
@@ -96,7 +95,6 @@ class BarcodeScanViewController: UIViewController {
         scanView.layer.addSublayer(rssiLabel.layer)
         scanView.layer.addSublayer(distanceLabel.layer)
         scanView.layer.addSublayer(scanButton.layer)
-        scanView.layer.addSublayer(sampleImageView.layer)
     }
 
     private func foundCode(code: String) {
@@ -133,7 +131,6 @@ class BarcodeScanViewController: UIViewController {
 
                 // JpegからUIImageを作成.
                 let image:UIImage = UIImage(data: imageData)!
-                self.sampleImageView.image = image
 
                 APIManager.sharedManager.postItemImage(nil, image: image, callback: { itemIds in
                     APIManager.sharedManager.getProduct(storeId: 1, eanId: 1, isbnId: 1, itemIds: itemIds, completion: { product in
