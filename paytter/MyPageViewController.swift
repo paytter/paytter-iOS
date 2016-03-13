@@ -56,7 +56,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                     if let response = result as? [String : AnyObject] {
                         // NOTE: OAuth認証で返ってきたレスポンスをそのまま保持しておきます(その後カメラを開く)
                         self.authorizeResponseJson = response
-//                        self.openImagePicker()
+                        self.openImagePicker()
                     }
                 })
                 let user = User.find()
