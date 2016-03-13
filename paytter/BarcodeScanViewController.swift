@@ -134,10 +134,17 @@ class BarcodeScanViewController: UIViewController {
                 // JpegからUIImageを作成.
                 let image:UIImage = UIImage(data: imageData)!
                 self.sampleImageView.image = image
+
+                APIManager.sharedManager.postItemImage(nil, image: image, callback: { itemIds in
+                    APIManager.sharedManager.getProduct(storeId: 1, eanId: 1, isbnId: 1, itemIds: itemIds, completion: { product in
+                            let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
+                            scanItemDetailViewController.product = product
+                            self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
+                    })
+                })
             })
         }
     }
-
 }
 
 extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
