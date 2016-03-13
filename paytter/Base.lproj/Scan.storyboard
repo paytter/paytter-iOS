@@ -65,10 +65,41 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWB-Yu-GFB">
+                                        <rect key="frame" x="500" y="428" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="IaI-pU-bIU"/>
+                                            <constraint firstAttribute="width" constant="100" id="TS1-zb-wfG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycv-GI-QAs">
+                                        <rect key="frame" x="260" y="436" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.20784313730000001" green="0.60784313729999995" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="cnN-hx-jQg"/>
+                                            <constraint firstAttribute="width" constant="80" id="kaV-if-xx7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="とる">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scanImage:" destination="Z4T-rV-fMA" eventType="touchUpInside" id="1Dq-Sq-TF5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aWB-Yu-GFB" secondAttribute="bottom" constant="8" id="7QI-TT-6Xz"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWB-Yu-GFB" secondAttribute="trailing" id="Jez-el-QJn"/>
                                     <constraint firstItem="ODI-oB-nop" firstAttribute="trailing" secondItem="52K-AN-nXw" secondAttribute="trailingMargin" id="TOg-8A-zFv"/>
+                                    <constraint firstItem="Ycv-GI-QAs" firstAttribute="centerX" secondItem="52K-AN-nXw" secondAttribute="centerX" id="WSo-Fy-OhU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ycv-GI-QAs" secondAttribute="bottom" constant="20" id="fKa-69-3xr"/>
                                     <constraint firstItem="8jW-VN-KrX" firstAttribute="top" secondItem="52K-AN-nXw" secondAttribute="topMargin" id="mIB-Uu-ADG"/>
                                     <constraint firstItem="8jW-VN-KrX" firstAttribute="trailing" secondItem="ODI-oB-nop" secondAttribute="trailing" id="mp1-ZQ-Qf9"/>
                                     <constraint firstItem="ODI-oB-nop" firstAttribute="leading" secondItem="8jW-VN-KrX" secondAttribute="leading" id="o6F-NK-RKj"/>
@@ -88,6 +119,8 @@
                     <connections>
                         <outlet property="distanceLabel" destination="ODI-oB-nop" id="5db-mp-ei3"/>
                         <outlet property="rssiLabel" destination="8jW-VN-KrX" id="WqD-oU-7U3"/>
+                        <outlet property="sampleImageView" destination="aWB-Yu-GFB" id="8pM-uP-zzj"/>
+                        <outlet property="scanButton" destination="Ycv-GI-QAs" id="rl6-88-Faf"/>
                         <outlet property="scanView" destination="52K-AN-nXw" id="lML-BF-4ia"/>
                     </connections>
                 </viewController>

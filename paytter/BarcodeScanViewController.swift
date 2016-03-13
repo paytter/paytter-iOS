@@ -8,24 +8,30 @@
 
 import UIKit
 import AVFoundation
+import ImageIO
 
 class BarcodeScanViewController: UIViewController {
 
     private var captureSession: AVCaptureSession!
+    private var captureConnection: AVCaptureConnection!
+    private var stillImageOutput: AVCaptureStillImageOutput!
     private var previewLayer: AVCaptureVideoPreviewLayer!
     
     @IBOutlet private weak var scanView: UIView!
+    @IBOutlet private weak var scanButton: UIButton!
     @IBOutlet private weak var rssiLabel: UILabel!
     @IBOutlet private weak var distanceLabel: UILabel!
+    @IBOutlet private weak var sampleImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareScan()
         captureSession.startRunning();
-        
-        BeaconScanner.sharedManager.delegate = self
-        
+
+        // NOTE: このコメントを外すとバーコード読み取りが動き出す
+//        BeaconScanner.sharedManager.delegate = self
+
 //        APIManager.sharedManager.getProduct(storeId: 1, eanId: nil, isbnId: nil, itemIds: "food_0000121261", completion: {
 //            (product: Product) -> Void in
 //            let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
@@ -52,6 +58,7 @@ class BarcodeScanViewController: UIViewController {
 
     private func prepareScan() {
         captureSession = AVCaptureSession()
+        stillImageOutput = AVCaptureStillImageOutput()
 
         let videoCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         let videoInput: AVCaptureDeviceInput
@@ -73,6 +80,7 @@ class BarcodeScanViewController: UIViewController {
 
         if captureSession.canAddOutput(metadataOutput) {
             captureSession.addOutput(metadataOutput)
+            captureSession.addOutput(stillImageOutput)
 
             metadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
             metadataOutput.metadataObjectTypes = [AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypePDF417Code]
@@ -87,6 +95,8 @@ class BarcodeScanViewController: UIViewController {
         scanView.layer.addSublayer(previewLayer)
         scanView.layer.addSublayer(rssiLabel.layer)
         scanView.layer.addSublayer(distanceLabel.layer)
+        scanView.layer.addSublayer(scanButton.layer)
+        scanView.layer.addSublayer(sampleImageView.layer)
     }
 
     private func foundCode(code: String) {
@@ -111,6 +121,23 @@ class BarcodeScanViewController: UIViewController {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
     }
+
+
+    @IBAction func scanImage(sender: UIButton) {
+        if let connection = stillImageOutput.connectionWithMediaType(AVMediaTypeVideo) as? AVCaptureConnection {
+            // ビデオ出力から画像を非同期で取得
+            stillImageOutput.captureStillImageAsynchronouslyFromConnection(connection, completionHandler: { (imageDataBuffer, error) -> Void in
+
+                // 取得画像のDataBufferをJpegに変換
+                let imageData:NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataBuffer)
+
+                // JpegからUIImageを作成.
+                let image:UIImage = UIImage(data: imageData)!
+                self.sampleImageView.image = image
+            })
+        }
+    }
+
 }
 
 extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
