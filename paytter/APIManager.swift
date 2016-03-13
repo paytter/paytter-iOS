@@ -72,6 +72,25 @@ class APIManager: NSObject {
         let url = kHostURL + "purchases"
         Alamofire.request(.POST, url, parameters: purchase.convertToParams())
     }
+
+    func postUser(params: [String: AnyObject]) {
+        let url = kHostURL + "users"
+
+        Alamofire.request(.POST, url, parameters: params, encoding: .JSON, headers: [ "Content-Type" : "application/json" ]).responseJSON { response in
+                if response.result.isSuccess {
+                    if let json = response.result.value {
+                        if let accessToken = json["access_token"] as? String {
+                            let userDefaults = NSUserDefaults.standardUserDefaults()
+                            userDefaults.setObject(accessToken, forKey: "userAccessToken")
+                            userDefaults.synchronize()
+                        }
+                    }
+                } else {
+                    JDStatusBarNotification.showWithStatus("ユーザ登録ができませんでした", dismissAfter: 3, styleName: "style")
+                }
+        }
+    }
+
     
     // MARK: FinTech API's Router
 
@@ -154,12 +173,13 @@ class APIManager: NSObject {
         }
     }
 
-    func getUserProfile() {
+    func getUserProfile(callback: (AnyObject?) -> Void) {
         Alamofire.request(APIManager.Router.ReadUser()).responseJSON(completionHandler: { response in
             if (response.result.isSuccess) {
                 let result = response.result.value
                 let user = User.init(json: JSON(result!))
                 user.save()
+                callback(result)
             }
         })
     }
