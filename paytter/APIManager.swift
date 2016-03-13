@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import JDStatusBarNotification
 
 class APIManager: NSObject {
     
@@ -15,7 +16,23 @@ class APIManager: NSObject {
     
     private let kHostURL = "http://ec2-54-64-75-180.ap-northeast-1.compute.amazonaws.com/"
     
-
+    override init() {
+        super.init()
+        
+        configureNotificationStyle()
+    }
+    
+    private func configureNotificationStyle() {
+        JDStatusBarNotification.addStyleNamed("style", prepare: {
+            (style: JDStatusBarStyle!) -> JDStatusBarStyle! in
+            style.textColor = .whiteColor()
+            style.barColor = .errorColor()
+            style.font = UIFont.boldSystemFontOfSize(18)
+            style.animationType = JDStatusBarAnimationType.Move
+            return style
+        })
+    }
+    
     // MARK: GET Methods
 
     
@@ -38,7 +55,7 @@ class APIManager: NSObject {
                         completion(product: Product(json: JSON(json)))
                     }
                 } else {
-                    // TODO: アラート出す
+                    JDStatusBarNotification.showWithStatus("商品情報を取得できませんでした", dismissAfter: 3, styleName: "style")
                 }
         }
     }

@@ -10,4 +10,5 @@ target 'paytter' do
     pod 'SwiftyJSON'
     pod 'FontAwesome.swift'
     pod 'SVProgressHUD'
+    pod 'JDStatusBarNotification'
 end

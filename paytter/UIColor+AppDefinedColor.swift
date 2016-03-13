@@ -32,4 +32,9 @@ extension UIColor {
     class func navigationBarColor() -> UIColor {
         return UIColor(rgb: 0x359BD2)
     }
+    
+    // 赤色
+    class func errorColor() -> UIColor {
+        return UIColor(rgb: 0xFD797A)
+    }
 }
