@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var authButton: UIButton!
     @IBOutlet weak var userProfileView: UIView!
@@ -21,6 +21,9 @@ class MyPageViewController: UIViewController {
         }
     }
     
+
+    private var authorizeResponseJson: [String : AnyObject]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +39,7 @@ class MyPageViewController: UIViewController {
     func updateUserInterface() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
 
-        profileImageUpdate()
+        profileImageUpdate(nil)
 
         if let myAccountId = userDefaults.objectForKey("mufgAccessToken") as? String {
             authButton.hidden = true
@@ -48,7 +51,13 @@ class MyPageViewController: UIViewController {
                 emailLabel.text = user.email
                 
             } else {
-                APIManager.sharedManager.getUserProfile()
+                APIManager.sharedManager.getUserProfile({ result in
+                    if let response = result as? [String : AnyObject] {
+                        // NOTE: OAuth認証で返ってきたレスポンスをそのまま保持しておきます(その後カメラを開く)
+                        self.authorizeResponseJson = response
+                        self.openImagePicker()
+                    }
+                })
                 let user = User.find()
                 userProfileView.hidden = false
                 nameLabel.text = user.name
@@ -57,11 +66,36 @@ class MyPageViewController: UIViewController {
         }
     }
 
-    func profileImageUpdate() {
+    func profileImageUpdate(picture: UIImage?) {
         profileImageView.setNeedsLayout()
         profileImageView.layoutIfNeeded()
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2.0
         profileImageView.layer.masksToBounds = true
+
+        if (picture != nil) {
+            profileImageView.image = picture
+        }
+    }
+
+    func openImagePicker() {
+        let imagePickerController = UIImagePickerController();
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        // UIImagePickerControllerSourceType.PhotoLibraryでアルバムへのアクセス
+        self.presentViewController(imagePickerController, animated:true, completion:nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if info[UIImagePickerControllerOriginalImage] != nil {
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+
+            // NOTE: "Use Photo"が選択されたら画像更新
+            profileImageUpdate(image)
+            // NOTE: これでusersへのPOSTができます(順番的に写真とった後がいいかなと思ってここに書きました)
+            APIManager.sharedManager.postUser([ "user" : self.authorizeResponseJson ])
+        }
+
+        picker.dismissViewControllerAnimated(true, completion: nil);
     }
     
     @IBAction private func didTouchCloseButton(sender: UIButton) {
