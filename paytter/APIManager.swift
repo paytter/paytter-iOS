@@ -29,6 +29,11 @@ class APIManager: NSObject {
         }
     }
     
+    enum Status: String {
+        case In = "in"
+        case Out = "out"
+    }
+    
     private func configureNotificationStyle() {
         JDStatusBarNotification.addStyleNamed("style", prepare: {
             (style: JDStatusBarStyle!) -> JDStatusBarStyle! in
@@ -84,6 +89,11 @@ class APIManager: NSObject {
         Cart.sharedManager.products.removeAll()
     }
 
+    func postVisit(storeId: Int, status: Status) {
+        let url = kHostURL + "visit"
+        Alamofire.request(.POST, url, parameters: ["store_id" : storeId, "state" : status.rawValue], headers: headers)
+    }
+    
     func postUser(params: [String: AnyObject]) {
         let url = kHostURL + "users"
 

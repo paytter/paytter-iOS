@@ -143,6 +143,10 @@ extension BarcodeScanViewController: BeaconScannerDelegate {
         if distance == "Far" {
             let purchase = Purchase(storeId: 1)
             APIManager.sharedManager.postPurchase(purchase)
+            APIManager.sharedManager.postVisit(1, status: APIManager.Status.Out)
+        }
+        if distance == "" || distance == "" {
+            APIManager.sharedManager.postVisit(1, status: APIManager.Status.In)
         }
     }
 }
