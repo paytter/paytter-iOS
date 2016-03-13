@@ -84,16 +84,7 @@
                             <constraint firstItem="52K-AN-nXw" firstAttribute="top" secondItem="bL0-ub-1Lg" secondAttribute="bottom" id="mBz-oT-Ef1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jWB-iP-AqP">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Joz-Eu-w4h">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="drW-vc-6ba">
-                                <rect key="frame" x="20" y="7" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="\u"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="jWB-iP-AqP"/>
                     <connections>
                         <outlet property="distanceLabel" destination="ODI-oB-nop" id="5db-mp-ei3"/>
                         <outlet property="rssiLabel" destination="8jW-VN-KrX" id="WqD-oU-7U3"/>
@@ -131,9 +122,41 @@
                     <view key="view" contentMode="scaleToFill" id="VdK-Tx-GpZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zje-cX-WWJ">
+                                <rect key="frame" x="492" y="72" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QEd-Rg-Rvr"/>
+                                    <constraint firstAttribute="height" constant="21" id="YJk-ay-wXO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rFV-7a-Zfm">
+                                <rect key="frame" x="492" y="101" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CYw-C3-LGz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rFV-7a-Zfm" firstAttribute="top" secondItem="Zje-cX-WWJ" secondAttribute="bottom" constant="8" symbolic="YES" id="DTK-yp-l6S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zje-cX-WWJ" secondAttribute="trailing" constant="-12" id="Dpg-TR-eAw"/>
+                            <constraint firstItem="Zje-cX-WWJ" firstAttribute="trailing" secondItem="rFV-7a-Zfm" secondAttribute="trailing" id="EgI-ao-29A"/>
+                            <constraint firstItem="Zje-cX-WWJ" firstAttribute="top" secondItem="GrE-Vr-ct2" secondAttribute="bottom" constant="8" symbolic="YES" id="PI7-oH-EeB"/>
+                            <constraint firstItem="rFV-7a-Zfm" firstAttribute="leading" secondItem="Zje-cX-WWJ" secondAttribute="leading" id="TsB-G1-BAK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qHh-eg-eoJ"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="rFV-7a-Zfm" id="CLm-wu-GKk"/>
+                        <outlet property="rssiLabel" destination="Zje-cX-WWJ" id="BE3-bt-dsd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gs-zj-Pbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
