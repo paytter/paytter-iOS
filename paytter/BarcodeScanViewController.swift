@@ -11,23 +11,27 @@ import AVFoundation
 
 class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
-    @IBOutlet weak var scanView: UIView!
-
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-
+    
+    @IBOutlet weak var scanView: UIView!
+    @IBOutlet private weak var rssiLabel: UILabel!
+    @IBOutlet private weak var distanceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareScan()
         captureSession.startRunning();
-
-        APIManager.sharedManager.getProduct(storeId: 1, eanId: nil, isbnId: nil, itemIds: "food_0000121261", completion: {
-            (product: Product) -> Void in
-            let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
-            scanItemDetailViewController.product = product
-            self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
-        })
+        
+        BeaconScanner.sharedManager.delegate = self
+        
+//        APIManager.sharedManager.getProduct(storeId: 1, eanId: nil, isbnId: nil, itemIds: "food_0000121261", completion: {
+//            (product: Product) -> Void in
+//            let scanItemDetailViewController = ViewControllerFactory.scanItemDetailViewController()
+//            scanItemDetailViewController.product = product
+//            self.presentViewController(scanItemDetailViewController, animated: true, completion: nil)
+//        })
     }
 
     func failed() {
@@ -88,6 +92,9 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
         previewLayer.frame = view.layer.bounds;
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         scanView.layer.addSublayer(previewLayer);
+        
+        scanView.layer.addSublayer(rssiLabel.layer)
+        scanView.layer.addSublayer(distanceLabel.layer)
     }
 
     // MARK: AVCaptureMetadataOutputObjectsDelegateのメソッド
@@ -118,5 +125,13 @@ class BarcodeScanViewController: UIViewController, AVCaptureMetadataOutputObject
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
+    }
+}
+
+extension BarcodeScanViewController: BeaconScannerDelegate {
+    func didRangeBeacon(rssi rssi: String, distance: String) {
+        print(rssi, distance)
+        rssiLabel.text = "RSSI: \(rssi)"
+        distanceLabel.text = "distance: \(distance)"
     }
 }

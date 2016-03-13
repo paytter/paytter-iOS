@@ -45,7 +45,35 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52K-AN-nXw">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8jW-VN-KrX">
+                                        <rect key="frame" x="492" y="8" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="r57-mR-jyk"/>
+                                            <constraint firstAttribute="width" constant="100" id="zbn-Un-Ab2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-oB-nop">
+                                        <rect key="frame" x="492" y="37" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="XvE-nX-3gF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ODI-oB-nop" firstAttribute="trailing" secondItem="52K-AN-nXw" secondAttribute="trailingMargin" id="TOg-8A-zFv"/>
+                                    <constraint firstItem="8jW-VN-KrX" firstAttribute="top" secondItem="52K-AN-nXw" secondAttribute="topMargin" id="mIB-Uu-ADG"/>
+                                    <constraint firstItem="8jW-VN-KrX" firstAttribute="trailing" secondItem="ODI-oB-nop" secondAttribute="trailing" id="mp1-ZQ-Qf9"/>
+                                    <constraint firstItem="ODI-oB-nop" firstAttribute="leading" secondItem="8jW-VN-KrX" secondAttribute="leading" id="o6F-NK-RKj"/>
+                                    <constraint firstItem="ODI-oB-nop" firstAttribute="top" secondItem="8jW-VN-KrX" secondAttribute="bottom" constant="8" symbolic="YES" id="uZh-AD-tUG"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +95,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="distanceLabel" destination="ODI-oB-nop" id="5db-mp-ei3"/>
+                        <outlet property="rssiLabel" destination="8jW-VN-KrX" id="WqD-oU-7U3"/>
                         <outlet property="scanView" destination="52K-AN-nXw" id="lML-BF-4ia"/>
                     </connections>
                 </viewController>
