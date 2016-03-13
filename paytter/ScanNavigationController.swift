@@ -19,8 +19,8 @@ final class ScanNavigationController: UINavigationController {
         let userImage = UIImage.fontAwesomeIconWithName(.User, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30)).imageWithRenderingMode(.AlwaysOriginal)
         let userButton = UIBarButtonItem(image: userImage, style: .Plain, target: self, action: "didTouchUserButton:")
         
-        topViewController?.navigationItem.leftBarButtonItem = cartButton
-        topViewController?.navigationItem.rightBarButtonItem = userButton
+        topViewController?.navigationItem.leftBarButtonItem = userButton
+        topViewController?.navigationItem.rightBarButtonItem = cartButton
     }
     
     dynamic private func didTouchCartButton(sender: UIBarButtonItem) {
@@ -28,6 +28,6 @@ final class ScanNavigationController: UINavigationController {
     }
 
     dynamic private func didTouchUserButton(sender: UIBarButtonItem) {
-        pushViewController(ViewControllerFactory.myPageViewController(), animated: true)
+        presentViewController(ViewControllerFactory.myPageNavigationController(), animated: true, completion: nil)
     }
 }
