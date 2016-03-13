@@ -17,7 +17,7 @@ class Cart: NSObject {
     func getTotalPrice() -> Int {
         var totalPrice = 0
         for product in products {
-            totalPrice += product.price ?? 0
+            totalPrice += (product.price ?? 0) * (product.detail?.quantity ?? 0)
         }
         return totalPrice
     }
