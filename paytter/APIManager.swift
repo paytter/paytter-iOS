@@ -134,7 +134,37 @@ class APIManager: NSObject {
         }
     }
 
-    
+
+    // MARK: docomo API
+
+    func postItemImage(params: [String : AnyObject]?, image: UIImage, callback: ( (String) -> Void )) {
+        let url = "https://api.apigw.smt.docomo.ne.jp/imageRecognition/v1/recognize?APIKEY=455464517a463532625674355948365375676e572f52614a5559344a485a532f556d375364356e49666838&recog=food"
+        let imageData = NSData(data: UIImageJPEGRepresentation(image, 1)!)
+        Alamofire.upload(.POST, url, headers: [ "Content-Type" : "application/octet-stream" ], data: imageData)
+        .responseJSON { response in
+            if response.result.isSuccess {
+                if let json = response.result.value {
+                    var itemIds = ""
+                    if let candidates = json["candidates"] as? Array<AnyObject> {
+                        var comma = ""
+                        for candidate in candidates {
+                            if let itemId = candidate["itemId"] as? String {
+                                itemIds = "\(itemIds)\(comma)\(itemId)"
+                                comma = ","
+                            }
+                        }
+                    }
+                    callback(itemIds)
+                }
+            } else {
+                JDStatusBarNotification.showWithStatus("画像認識ができませんでした", dismissAfter: 3, styleName: "style")
+            }
+        }
+    }
+
+
+
+
     // MARK: FinTech API's Router
 
     enum Router: URLRequestConvertible {
