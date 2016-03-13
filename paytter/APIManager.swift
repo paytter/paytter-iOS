@@ -33,8 +33,8 @@ class APIManager: NSObject {
         })
     }
     
+    
     // MARK: GET Methods
-
     
     func getProduct(storeId storeId: Int, eanId: Int?, isbnId: Int?, itemIds: String, completion: (product: Product) -> Void) {
         let url = kHostURL + "products/search"
@@ -62,6 +62,11 @@ class APIManager: NSObject {
 
 
 
+    func postPurchase(purchase: Purchase) {
+        let url = kHostURL + "purchases"
+        Alamofire.request(.POST, url, parameters: purchase.convertToParams())
+    }
+    
     // MARK: FinTech API's Router
 
     enum Router: URLRequestConvertible {
